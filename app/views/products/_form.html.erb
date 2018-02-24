@@ -1,0 +1,45 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% puts "[_form.html.erb]Product Status: "%>
+  <% puts @product.deleted %>
+  <% puts @genCode %>
+
+  <div class="field">
+    <%= form.label 'Code' %>
+    <%= form.text_field :prodCode, id: :product_prodCode, :readonly=>false %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Category' %>
+    <%= form.text_field :prodCategory, id: :product_prodCategory %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Name' %>
+    <%= form.text_field :prodName, id: :product_prodName %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Description' %>
+    <%= form.text_field :prodDesc, id: :product_prodDesc %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Price' %>
+    <%= form.text_field :price, id: :product_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Accept', class:'btn btn_new'%>
+  </div>
+<% end %>

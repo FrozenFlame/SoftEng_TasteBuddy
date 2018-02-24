@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prodCode: MyString
+  prodCategory: MyString
+  prodName: MyString
+  prodDesc: MyString
+  price: 
+
+two:
+  prodCode: MyString
+  prodCategory: MyString
+  prodName: MyString
+  prodDesc: MyString
+  price: 
