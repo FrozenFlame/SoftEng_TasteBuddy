@@ -31,7 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # Added gems
 gem 'mongoid', '~> 6.3.0'
 gem 'font-awesome-sass', '~> 5.0.6'
-
+gem 'kaminari-mongoid'
+gem 'kaminari-actionview'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,7 +1,6 @@
 class Product
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Filterable
   field :prodCode, type: String
   field :prodCategory, type: String
   field :prodName, type: String
@@ -20,6 +19,12 @@ class Product
 
   def isCurrency?
     self.is_a?(BigDecimal)
+  end
+
+  def self.search(search)
+    if search
+      any_of({prodCategory: /#{search}/i},{prodName: /#{search}/i},{prodDesc: /#{search}/i})
+    end
   end
   
 end

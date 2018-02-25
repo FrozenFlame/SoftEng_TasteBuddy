@@ -75,6 +75,13 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
+    kaminari-mongoid (1.0.1)
+      kaminari-core (~> 1.0)
+      mongoid
     loofah (2.2.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -179,6 +186,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   font-awesome-sass (~> 5.0.6)
   jbuilder (~> 2.5)
+  kaminari-actionview
+  kaminari-mongoid
   mongoid (~> 6.3.0)
   puma (~> 3.7)
   rails (~> 5.1.5)

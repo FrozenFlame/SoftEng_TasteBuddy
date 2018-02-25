@@ -1,13 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-
 <div class="container">
   <h1>Products</h1>
   <div id="header" class="header">
       <div class="row">
         <div class="col-lg-12 col-md-12">
-            <button type="button" id="SearchButton" class="btn">Search</button>
-            <input type="text" id="SearchBar" class="SearchBar" placeholder="Search">
+          <%= form_tag products_path, :method => 'get' do %>
+            <!--<button type="button" id="SearchButton" class="btn">Search</button>
+            <input type="text" id="search" name="search" class="SearchBar" placeholder="Search">-->
+            <%= text_field_tag :search, params[:search], placeholder:'Search...' %>
+            <%= button_tag "Search", name: nil, class:'btn'%>
+          <% end %>
         </div> 
       </div>   
   </div> 
@@ -35,7 +38,7 @@
               <td>
               <%= link_to 'Show', product, class:'btn'%>
               <%= link_to 'Edit', edit_product_path(product), class:'btn btn-primary btn_edit' %>
-              <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn_destroy' %>
+              <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn_destroy' %>
               </td>
             </tr>
         <% end %>

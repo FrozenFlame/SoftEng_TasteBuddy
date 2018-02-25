@@ -4,11 +4,23 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
-    puts "[products_controller] Show all"
-  end
-  def search
-     @products = Product.filter(params.slice(:status, :location, :starts_with))
+    sleep 1
+    # @products = Product.search(params[:search])
+    # if params[:search]
+    #   @products = Product.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+    # else
+    #   @products = Product.find(:all)
+      
+    # end
+    if params[:search].blank?
+      # @products = Product.all.paginate(:page => params[:page], :per_page => 10)
+      @products = Product.all
+    else
+      # @products = Product.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
+      @products = Product.search(params[:search])
+      
+    end
+   
   end
 
   # GET /products/1
