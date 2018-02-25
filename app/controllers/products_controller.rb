@@ -7,6 +7,9 @@ class ProductsController < ApplicationController
     @products = Product.all
     puts "[products_controller] Show all"
   end
+  def search
+     @products = Product.filter(params.slice(:status, :location, :starts_with))
+  end
 
   # GET /products/1
   # GET /products/1.json
@@ -19,7 +22,7 @@ class ProductsController < ApplicationController
     
     @product = Product.new
     if Product.last() == nil
-      puts "[products_controller] DB empty, first code generated"
+      puts "[products_controller] db.product empty, first code generated"
       @genCode = '00001'
     else
       @prevProd = Product.last().prodCode.to_i

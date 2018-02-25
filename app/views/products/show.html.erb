@@ -1,3 +1,4 @@
+<br/>
 <p id="notice"><%= notice %></p>
 <div class="container">
   <br/>
@@ -23,7 +24,7 @@
 
   <p>
     <strong>Price:</strong>
-    <%= @product.price %>
+    <%= number_to_currency(@product.price, :unit =>'P') %>
   </p>
 
   <%= link_to 'Edit', edit_product_path(@product) %> |

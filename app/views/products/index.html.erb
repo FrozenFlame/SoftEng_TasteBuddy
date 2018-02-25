@@ -3,6 +3,14 @@
 
 <div class="container">
   <h1>Products</h1>
+  <div id="header" class="header">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <button type="button" id="SearchButton" class="btn">Search</button>
+            <input type="text" id="SearchBar" class="SearchBar" placeholder="Search">
+        </div> 
+      </div>   
+  </div> 
   <table class = 'table table-condensed table-hover'>
     <thead>
       <tr>
@@ -23,7 +31,7 @@
               <td><%= product.prodCategory %> </td> 
               <td><%= product.prodName %> </td> 
               <td><%= product.prodDesc %> </td> 
-              <td><%= product.price %> </td> 
+              <td><%= number_to_currency(product.price, :unit =>'P') %> </td> 
               <td>
               <%= link_to 'Show', product, class:'btn'%>
               <%= link_to 'Edit', edit_product_path(product), class:'btn btn-primary btn_edit' %>
