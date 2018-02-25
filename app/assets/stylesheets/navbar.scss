@@ -1,0 +1,96 @@
+.glyphicon glyphicon-triangle-bottom{
+    padding-top: 10px;
+}
+.places-li{
+    padding-left: 10px;
+    height: 25px;
+    cursor: pointer;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color:dimgrey;
+}
+.places-li:hover {
+    background-color: whitesmoke;
+    color: darkgreen;
+    font-weight: bold;
+}
+#nav-user-dropdown:hover{
+    background-color: whitesmoke;
+    color: darkgreen;
+    font-weight: bold;
+}
+.dropdown-menu {
+     display: none;/*This is the default state.*/
+    z-index: 9999;
+    position: absolute;
+    max-height:300px;/*The important part*/
+    overflow-y:auto;/*Also...*/
+    overflow-x:hidden;/*And the end of the important part*/
+    padding-top: inherit;
+    border: 1px solid #ddd;
+}
+
+.navbar-default {
+    background-color: #205628;
+    border-color: #E7E7E7;   
+}
+
+/* title */
+.navbar-default {
+    box-shadow: 5px;
+}
+.navbar-default .navbar-brand {
+    color: #FFFFFF;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #FFFFFF;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #FFFFFF;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: #0b2b10;
+    color:#FFFFFF;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #FFFFFF;
+    background-color: #0b2b10;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #FFFFFF;
+    background-color: #0b2b10;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
+}
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #555;
+    border-bottom-color: #555;
+}
+/* mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #DDD;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #DDD;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #CCC;
+}

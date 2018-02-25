@@ -3,35 +3,34 @@
 
 <div class="container">
   <h1>Products</h1>
-  <table>
+  <table class = 'table table-condensed table-hover'>
     <thead>
       <tr>
-        <th>Code</th>
-        <th>Category</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th colspan="3"></th>
+        <th>Code</th> 
+        <th>Category</th> 
+        <th>Name</th> 
+        <th>Description</th> 
+        <th>Price</th> 
+        <th colspan="3"></th> 
       </tr>
     </thead>
 
     <tbody>
       <% @products.each do |product| %>
-          <tr>
-            <td><%= product.prodCode %></td>
-            <td><%= product.prodCategory %></td>
-            <td><%= product.prodName %></td>
-            <td><%= product.prodDesc %></td>
-            <td><%= product.price %></td>
-            <td>
-              <div class="btn-group">
-            <%= link_to 'Show', product, class:'btn'%>
-            <%= link_to 'Edit', edit_product_path(product), class:'btn btn-primary btn_edit' %>
-            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn_destroy' %>
-            </div>
-            </td>
-          </tr>
-        </div>
+        <% if not product.isDeleted? %>
+            <tr>
+              <td><%= product.prodCode %> </td> 
+              <td><%= product.prodCategory %> </td> 
+              <td><%= product.prodName %> </td> 
+              <td><%= product.prodDesc %> </td> 
+              <td><%= product.price %> </td> 
+              <td>
+              <%= link_to 'Show', product, class:'btn'%>
+              <%= link_to 'Edit', edit_product_path(product), class:'btn btn-primary btn_edit' %>
+              <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn_destroy' %>
+              </td>
+            </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

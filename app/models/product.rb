@@ -12,4 +12,7 @@ class Product
     deleted == true
   end
 
+  validates :prodCategory, presence: true
+  validates :prodName, presence: true, length:{minimum: 5}
+  
 end

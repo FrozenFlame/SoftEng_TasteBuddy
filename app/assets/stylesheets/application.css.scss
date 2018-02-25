@@ -14,4 +14,7 @@
  *= require_self
  *= reqire bootstrap-theme.min.css
  *= require bootstrap.min.css
+ *= require navbar.scss
  */
+@import "font-awesome-sprockets";
+@import "font-awesome";

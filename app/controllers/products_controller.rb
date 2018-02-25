@@ -15,13 +15,17 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    # if Product.
-    @product = Product.new
-    
-    @prevProd = Product.last().prodCode.to_i
     puts "[products_controller] New Product"
-    @prevProd = @prevProd +1
-    @genCode = @prevProd.to_s.rjust(5, "0")
+    
+    @product = Product.new
+    if Product.last() == nil
+      puts "[products_controller] DB empty, first code generated"
+      @genCode = '00001'
+    else
+      @prevProd = Product.last().prodCode.to_i
+      @prevProd = @prevProd +1
+      @genCode = @prevProd.to_s.rjust(5, "0")
+    end
   end
 
   # GET /products/1/edit
@@ -64,8 +68,8 @@ class ProductsController < ApplicationController
   # DELETE /products/1.json
   def destroy
     @product.deleted = true
+    @product.update_attributes(:deleted => true)  
     # @product.destroy
-    
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
