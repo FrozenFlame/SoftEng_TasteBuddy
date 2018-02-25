@@ -33,6 +33,9 @@ gem 'mongoid', '~> 6.3.0'
 gem 'font-awesome-sass', '~> 5.0.6'
 gem 'kaminari-mongoid'
 gem 'kaminari-actionview'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
