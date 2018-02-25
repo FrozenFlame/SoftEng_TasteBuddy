@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<!-- This is what a user would see when they want to review their orders -->
 <div class="container">
-  <h1>Products</h1>
+  <h1>Your Orders</h1>
   <div id="header" class="header">
       <div class="row">
         <div class="col-lg-12 col-md-12">
-          <%= form_tag products_path, :method => 'get' do %>
+          <%= form_tag orders_path, :method => 'get' do %>
             <!--<button type="button" id="SearchButton" class="btn">Search</button>
             <input type="text" id="search" name="search" class="SearchBar" placeholder="Search">-->
             <%= text_field_tag :search, params[:search], placeholder:'Search...' %>
@@ -17,28 +18,28 @@
   <table class = 'table table-condensed table-hover'>
     <thead>
       <tr>
-        <th>Product No.</th> 
-        <th>Category</th> 
-        <th>Name</th> 
-        <th>Description</th> 
-        <th>Price</th> 
+        <th>Order No.</th> 
+        <th>Date Ordered</th>
+        <th>Contents</th> 
+        <th>Total Price</th> 
         <th colspan="3"></th> 
       </tr>
     </thead>
 
     <tbody>
-      <% @products.each do |product| %>
-        <% if not product.isDeleted? %>
+      <% @orders.each do |order| %>
+        <% if not order.isDeleted? %>
             <tr>
-              <td><%= product.prodCode %> </td> 
-              <td><%= product.prodCategory %> </td> 
-              <td><%= product.prodName %> </td> 
-              <td><%= product.prodDesc %> </td> 
-              <td><%= number_to_currency(product.price, :unit =>'P') %> </td> 
+              <td><%= order.orderCode %> </td> 
+              <td><%= order.orderDate %> </td> 
+              <td><%= order.orderContents %> </td> 
+              <!-- total order price at this part --> 
+              <!--<td><%= number_to_currency(product.price, :unit =>'P') %> </td> -->
+              <td><%= number_to_currency(1234, :unit =>'P') %> </td> 
               <td>
-              <%= link_to 'Show', product, class:'btn'%>
-              <%= link_to 'Edit', edit_product_path(product), class:'btn btn-primary btn_edit' %>
-              <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn_destroy' %>
+              <%= link_to 'Show', order, class:'btn'%>
+              <%= link_to 'Edit', edit_order_path(order), class:'btn btn-primary btn_edit' %>
+              <%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn_destroy' %>
               </td>
             </tr>
         <% end %>
@@ -51,7 +52,7 @@
 
 <%# The syntax here is link_to 'Text user sees', actual link, 'further items here are other attributes on the tag' %>
 
-<%= link_to 'New Product', new_product_path, class:'btn btn_new'%> 
+<%= link_to 'New Order', new_order_path, class:'btn btn_new'%> 
 </div>
 <!-- MEGA COMMENT
 <!-- itemLayer 
