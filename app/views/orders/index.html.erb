@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<br/>
 <!-- This is what a user would see when they want to review their orders -->
 <div class="container">
   <h1>Your Orders</h1>
@@ -27,6 +27,7 @@
     </thead>
 
     <tbody>
+      <% total_price = 0 %>
       <% @orders.each do |order| %>
         <% if not order.isDeleted? %>
             <tr>
@@ -35,9 +36,13 @@
               <td><%= order.orderContents %> </td> 
               <!-- total order price at this part --> 
               <!--<td><%= number_to_currency(product.price, :unit =>'P') %> </td> -->
-              <td><%= number_to_currency(1234, :unit =>'P') %> </td> 
+              <% order.orderContents.each do |price|%>
+                <% total_price += price %>
+              <% end %>
+              <td><%= number_to_currency(total_price, :unit =>'P') %> </td> 
               <td>
               <%= link_to 'Show', order, class:'btn'%>
+              <%# link_to 'Edit', edit_order_path(order), class:'btn btn-primary btn_edit' %>
               <%= link_to 'Edit', edit_order_path(order), class:'btn btn-primary btn_edit' %>
               <%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn_destroy' %>
               </td>
