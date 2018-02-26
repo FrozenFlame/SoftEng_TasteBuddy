@@ -1,27 +1,54 @@
-<br>
-<br>
 
-
-<div id="orderSummary" class="orderSummary">
+<div id="orderSummary" class="orderSummary" style="margin-top:5%;">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-7 col-sm-7" >
             <h1>Orders</h1>
-                <div class="container" style="    border: 2px solid #aaa; outline: none; box-sizing: border-box; height:150px; margin-top:10px;">
+                <div class="container" style="border: 2px solid #aaa; outline: none; box-sizing: border-box; height:30%; margin-top:10px;">
                     <div class="row">
-                        <div class="col-lg-4 col-md-4">
-                           <p>Image to</p>
+                        <div class="col-lg-4 col-md-4" style="height:140px;width:100%;">
+                            
+                            <%= image_tag("cakes/applecinamon.jpg", size:"200x173")     %>
                         </div>
                         <div class="col-lg-4 col-md-4">
                            <p>Descriptions</p>
                         </div>
                         <div class="col-lg-4 col-md-4">
-                           <button type="button" class="btn btn-danger" style="margin-top:50px;float:right;">Remove</button>
+                           <button type="button" class="btn btn-danger btn_destroy" style="margin-top:50px;float:right;">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="container" style="border: 2px solid #aaa; outline: none; box-sizing: border-box; height:30%; margin-top:10px;">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <%= image_tag("cakes/coconut cake.jpg", size:"200x173")     %>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                           <p>Descriptions</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                           <button type="button" class="btn btn-danger btn_destroy" style="margin-top:50px;float:right;">Remove</button>
                         </div>
                         
                     </div>
                 </div>
-                
+               
+                 <div class="container" style="border: 2px solid #aaa; outline: none; box-sizing: border-box; height:30%; margin-top:10px;">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <%= image_tag("cakes/raspberry pink velvet cake.jpg", size:"200x173") %>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                           <p>Descriptions</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                           <button type="button" class="btn btn-danger btn_destroy" style="margin-top:50px;float:right;">Remove</button>
+                        </div>
+                        
+                    </div>
+                </div>
+               
             </div>
             <div class="col-lg-5 col-md-5 col-sm-5 " id="rightPanel">
                 <h1>total</h1>
@@ -34,9 +61,41 @@
                         <th colspan="3"></th> 
                       </tr>
                     </thead>
+                     <tbody>
+            <tr>
+              <td>00001</td> 
+              <td>Apple Cinnamon Cake</td> 
+              <td><%= number_to_currency(350, :unit =>'P') %> </td> 
+            </tr>
+            <tr>
+              <td>00002</td> 
+              <td>Coconut Cake</td> 
+              <td><%= number_to_currency(450, :unit =>'P') %> </td> 
+            </tr>
+            <tr>
+              <td>00003</td> 
+              <td>Raspberry Pink Velvet Cake</td> 
+              <td><%= number_to_currency(500, :unit =>'P') %> </td> 
+            </tr>
+    </tbody>
+                <%=@total=1300 %>
+                     
                 </table>
-                <button type="button" class="btn btn-primary">Buy Now</button>
-                <button type="button" class="btn btn-danger">Cancel</button>
+                <h3 style="margin-top:60%;margin-left:50%;">Total: <%= number_to_currency(@total, :unit => 'P') %></h3>
+                <button type="button" class="btn btn-danger btn_destroy" style="float:right;">Cancel</button>
+                <button type="button" class="btn btn-primary btn_edit" style="float:right;">Buy Now</button>
+                
+<!--                newly added-->
+<!--
+                <input type="text" placeholder="Product Code" class="" style="margin-top:12%;">
+                <input type="text" placeholder="quantity" style="margin-top:12%;">
+                <button type="button" class="btn btn-primar">Add</button>
+-->
+                
+
+                
+                
+            
             </div>
             
         </div>
