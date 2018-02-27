@@ -20,3 +20,7 @@ db.orders.insert({orderCode:"O00001",orderDate:new ISODate("2018-02-22 23:20"),o
 
 db.users.insert({userid:"U00001", username:"fake", password:"legit", orders:["O00001", "O00003"]})
 db.users.insert({userid:"U00002", username:"real", password:"jebait", orders:["O00002"]})
+
+db.products.insert({prodCode:"00001", prodCategory:"Cakes", prodName:"Strawberry Cake", prodDesc:"Delicious", price: 100.0, deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00002", prodCategory:"Cakes", prodName:"Chocolate Cake", prodDesc:"Sweet", price: 125.0, deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00003", prodCategory:"Cakes", prodName:"Cookie Cake", prodDesc:"Crunchy", price: 250.0, deleted: false, updated_at: new Date(), created_at:new Date()})

@@ -19,9 +19,19 @@ class Order
   end
 
   def self.search(search)
+    # special measures have to be taken
+    cookie = "cookie"
     if search
-      any_of({orderUser: /#{search}/i},{orderContents: /#{search}/i})
+      any_of({orderDate: /#{search}/i},{orderUser: /#{search}/i})
     end
   end
-  
+  def check_match(search)
+    Ordrcontentgetter.get_names(search)
+    return 
+  end
+
+  def minusOne(inp)
+    return inp-1
+  end
+
 end

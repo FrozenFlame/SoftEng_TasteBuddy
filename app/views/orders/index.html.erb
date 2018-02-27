@@ -27,24 +27,23 @@
     </thead>
 
     <tbody>
-      <% total_price = 0 %>
       <% @orders.each do |order| %>
         <% if not order.isDeleted? %>
             <tr>
-              <td><%= order.orderCode %> </td> 
-              <td><%= order.orderDate %> </td> 
-              <td><%= order.orderContents %> </td> 
+              <td><%= order.orderCode %></td> 
+              <td><%= order.orderDate %></td> 
+              <td><%= get_names(order.orderContents) %></td> 
               <!-- total order price at this part --> 
-              <!--<td><%= number_to_currency(product.price, :unit =>'P') %> </td> -->
-              <% order.orderContents.each do |price|%>
-                <% total_price += price %>
-              <% end %>
-              <td><%= number_to_currency(total_price, :unit =>'P') %> </td> 
+              <%# order.orderContents.each do |item|%>
+                <%# total_price += price[1] %>
+              <%# end %>
+              <% puts "[index.html-orders] " + total_price(order.orderContents).to_s %>
+              <td><%= number_to_currency(total_price(order.orderContents), :unit =>'P') %> </td> 
               <td>
               <%= link_to 'Show', order, class:'btn'%>
               <%# link_to 'Edit', edit_order_path(order), class:'btn btn-primary btn_edit' %>
-              <%= link_to 'Edit', edit_order_path(order), class:'btn btn-primary btn_edit' %>
-              <%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn_destroy' %>
+              <%# link_to 'Edit', edit_order_path(order), class:'btn btn-primary btn_edit' %>
+              <%# link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger btn_destroy' %>
               </td>
             </tr>
         <% end %>
@@ -52,10 +51,8 @@
     </tbody>
   </table>
 
-
 <br>
 
 <%# The syntax here is link_to 'Text user sees', actual link, 'further items here are other attributes on the tag' %>
 
-<%= link_to 'New Order', new_order_path, class:'btn btn_new'%> 
 </div>

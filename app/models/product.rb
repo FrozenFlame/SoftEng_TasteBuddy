@@ -26,5 +26,9 @@ class Product
       any_of({prodCategory: /#{search}/i},{prodName: /#{search}/i},{prodDesc: /#{search}/i})
     end
   end
+
+  def get_string
+    return "hel"
+  end
   
 end

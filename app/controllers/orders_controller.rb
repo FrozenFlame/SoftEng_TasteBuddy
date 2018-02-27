@@ -1,11 +1,19 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /products
   # GET /products.json
   def index
     sleep 1
-    @orders = Order.all
+    # @orders = Order.all
+     if params[:search].blank?
+      # @products = Product.all.paginate(:page => params[:page], :per_page => 10)
+      @orders = Order.all
+    else
+      # @products = Product.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
+      @orders = Order.search(params[:search])
+      
+    end
   end
 
   # GET /products/1
@@ -75,7 +83,18 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  def total_price(oC)
+    # @pc = Pricecalc.new(oC)
+    return Ordrcontentgetter.total_price(oC)
+  end
+  helper_method :total_price
+  
+  def get_names(oC)
+    return Ordrcontentgetter.get_names(oC)
+  end
+  helper_method :get_names
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
