@@ -30,8 +30,18 @@ class Product
     end
   end
 
-  def get_string
-    return "hel"
+  def self.build(productCode)
+    if productCode
+      where({prodCode: productCode})
+    end
+  end
+
+  def self.getProdName(str)
+     @prods = Product.where(:prodCode => str)
+        @prods.each do |p|
+            return +p.prodName.to_s
+        end
+        return "Unknown Name"
   end
   
 end

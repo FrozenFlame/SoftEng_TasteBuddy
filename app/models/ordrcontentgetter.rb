@@ -38,7 +38,13 @@ class Ordrcontentgetter
         return names.join(", ")
     end
 
-    def self.get_name(oC)
-        
+    def self.get_name(productCode)
+        @prods = Product.where(:prodCode => productCode)
+        @prods.each do |p|
+            return +p.prodName.to_s
+        end
+        return "Unknown Name"
     end
+    
+
 end
