@@ -19,9 +19,10 @@ class Ordrcontentgetter
         @orderContents.each do |item|
             @prods = Product.where(:prodCode => item[0])
             @prods.each do |p|
-                total = p.price * item[1]
+                total += p.price * item[1]
             end
         end         
+        puts "[Ordrcontentgetter] total price: %f" % [total]
         return total
     end
 
@@ -29,7 +30,6 @@ class Ordrcontentgetter
         names = []
         @orderContents = oC
         @orderContents.each do |item|
-            puts "[Ordrcontentgetter] boops "
             @prods = Product.where(:prodCode => item[0])
             @prods.each do |p|
                 names.push("[%dx]" % [item[1].to_i] +p.prodName)  
@@ -38,7 +38,13 @@ class Ordrcontentgetter
         return names.join(", ")
     end
 
-    def self.get_name(oC)
-        
+    def self.get_name(productCode)
+        @prods = Product.where(:prodCode => productCode)
+        @prods.each do |p|
+            return +p.prodName.to_s
+        end
+        return "Unknown Name"
     end
+    
+
 end

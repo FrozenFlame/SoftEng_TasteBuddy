@@ -1,6 +1,8 @@
 class Product
   include Mongoid::Document
   include Mongoid::Timestamps
+  # wow... what a waste of time 
+  # apparently ther'es a module called Mongoid::Paranoia, which allows you to only soft delete your items
   field :prodCode, type: String
   field :prodCategory, type: String
   field :prodName, type: String
@@ -8,6 +10,7 @@ class Product
   field :price, type: BigDecimal
   field :deleted, type: Boolean, default: false
   field :pathToImg, type: String, default: 'assets/no-img.png'
+  # field :_id, type: String, default: -> { prodCode.to_s.parameterize } # this makes it so the link above would be reflected here BUT only if they have been newly created, this breaks old links
 
   def isDeleted?
     deleted == true
@@ -27,8 +30,22 @@ class Product
     end
   end
 
-  def get_string
-    return "hel"
+  def self.build(productCode)
+    if productCode
+      where({prodCode: productCode})
+    end
+  end
+
+  def self.getProdName(str)
+     @prods = Product.where(:prodCode => str)
+        @prods.each do |p|
+            return +p.prodName.to_s
+        end
+        return "Unknown Name"
   end
   
 end
+
+# make use of 'attr accessible
+# e.g.:
+# attr accessible :name, :price, :released_on
