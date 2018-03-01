@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'main_page/index'
+
   # routes notes:
   # formats:
   # root 

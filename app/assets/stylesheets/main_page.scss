@@ -1,0 +1,314 @@
+// Place all the styles related to the MainPage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+body{
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing:antialiased !important;
+    
+    
+}
+li{
+    list-style: none;
+    display: inline-block;
+    
+}
+a{
+    text-decoration: none;
+    translation:all 500ms ease-in-out;
+}
+
+
+a:hover,
+a:active{
+    text-decoration: none;
+    
+}
+
+h1,
+h2,
+h4{
+    font-family: 'PT Sans Narrow',arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: black;
+}
+p{
+    font-size: 15px;
+    line-height: 21px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.btn{
+    transistion: all 300ms ease-in-out;
+    font-weight: 300 !important;
+    text-transform: uppercase;
+    
+}
+.btn:hover{
+    background-color:#ededed !important;
+    color: darkcyan !important;
+    border: 1px solid #fff !important;
+}
+
+
+/*navigation */
+
+.navbar{
+   
+    background-color: #222222 !important;
+    height: 60px;
+    text-transform:uppercase;
+    font-family: 'PT Sans Narrow', Arial, sans-serif;
+    font-weight:700;
+    margin-bottom: 100px;
+}
+   
+.navbar a{
+    color: white !important;
+    opacity: 1.0;
+}
+.navbar a:hover {
+    opacity: 1;
+    background-color: #111111 ! important;
+}
+
+/*firstLayer*/
+
+.firstLayer{
+    height: 400px;
+    width: 100%;
+    padding: 30px 0 30px;
+    background-image: url(images/BgReserveFinal.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+    color: #fff;
+}
+.secondLayer{
+    height: 300px;
+    width: 100%;
+    padding: 30px 0 30px;
+    margin-top: none;
+    background-color: whitesmoke;
+    color: black;
+}
+.secondLayer p{
+    margin-top: 80px;
+    font-size: 24px;
+    font-family: Courier New;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+.secondLayer .btn{
+    float: right;
+    margin: 40px 20px;
+}
+
+.thirdLayer{
+    height: 500px;
+    width: 100%;
+    padding: 30px 0 30px;
+    margin-top: none;
+    background-image: url(images/parking.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.thirdLayer h1{
+    color: whitesmoke !important;
+    font-size: 20px;
+    font-family: fantasy;
+    text-align: center;
+    margin-top: 130px;
+    font-size: 36px;  
+    padding-top: 20px;
+}
+
+.fourthLayer{
+    height: 400px;
+    width: 100%;
+    padding: 30px 0 30px;
+    margin-top: none;
+    font-family: Courier New;
+    background-color: whitesmoke;
+    color: black;
+}
+.fourthLayer p{
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.fourthLayer h7{
+    font-size: 24px;    
+}
+.fourthLayer h8{
+    font-size:32px;
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+   
+}
+.fourthLayer h5{
+    font-size: 20px;
+    color:dimgrey;
+}
+.fourthLayer h6{
+    font-size: 16px;
+     color:dimgrey;
+}
+
+.footer{
+    height: 200px;
+    width: 100%;
+    background-color: #1e1e15;
+    color: whitesmoke;
+}
+.footer h4{
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+@media(max-width:991px)
+{
+    
+    .navbar li{
+        margin-top: 0px;
+        backface-visibility: visible;
+        background-color:#222222 !important ;
+        height: 50px;
+        
+    }
+     .secondLayer p{
+        margin-top: 50px;
+    }
+  
+    .footer{
+        height:500px;
+        background-color: #1e1e15;
+        
+    }
+}
+
+
+@media(max-width:990px){
+   
+    .navbar li{
+        margin-top: 0px;
+        backface-visibility: visible;
+        background-color: #222222 !important ;
+        height: 50px;
+    }
+}
+
+
+@media(max-width:991px)
+{
+    .header{
+        padding: 30px;
+        height: 750px;
+        
+    }
+    .header img{
+        width: 90%;
+        height: 380px;
+        margin: 28px 0 0 20px;
+    
+    }
+    .navbar{
+        margin-bottom: 0px;
+    }
+    .navbar li{
+        margin-top: 0px;
+        backface-visibility: visible;
+        background-color: #222222 !important ;
+        height: 50px;
+    }
+      
+    .fourthLayer h8{
+        font-size: 30px;
+        font-weight: bold;
+        
+    }
+}
+@media(max-width:612px){
+     .secondLayer p{
+    margin-top: 40px;
+    font-size: 20px;
+   
+    }
+    .secondLayer .btn{
+    font-size: 15px;
+    margin: 40px 20px;
+    }
+  
+ .fourthLayer{
+    height: 400px;
+    width: 100%;
+    padding: 30px 0 30px;
+    margin-top: none;
+    font-family: Courier New;
+    background-color: whitesmoke;
+    color: black;
+}
+    .fourthLayer h7{
+        font-size: 20px;    
+    }
+    
+    .fourthLayer h8{
+        font-size: 28px;
+        font-weight: bold;
+        
+    }
+}
+
+@media(max-width:565px){
+    .secondLayer p{
+    margin-top: 40px;
+    font-size: 20px;
+   
+    }
+    .secondLayer .btn{
+    font-size: 15px;
+    margin: 40px 20px;
+    }
+    .thirdLayer h1{
+        font-size: 30px;
+    }
+    .fourthLayer{
+        height: auto;
+    }
+    .fourthLayer h8{
+        font-size: 26px;
+    }
+    .fourthLayer p{
+        font-size: 20px;
+    }
+  
+
+}
+@media(max-width:431px){
+    .secondLayer{
+        height: auto;
+    }
+    .footer{
+        height: auto;
+    }
+    
+}
+.mySlider {
+    margin-top: 5%;
+}
