@@ -37,14 +37,15 @@
                       </tr>
                     </thead>
                      <tbody>
-            <tr>
               <% @order.orderContents.each do |item| %>
               <% @product = Product.find_by(:prodCode => item[0]) %>
+            <tr>
               <td><%= item[1].to_i %></td> 
               <td><%= @product.prodName %></td> 
-              <td><%= number_to_currency(@product.price, :unit =>'P') %> </td>
-              <% end %> 
+              <td><%= number_to_currency((@product.price * item[1]), :unit =>'P') %> </td>
             </tr>
+              <% end %> 
+            
     </tbody>
                 
                      

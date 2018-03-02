@@ -94,6 +94,15 @@ class OrdersController < ApplicationController
     return Ordrcontentgetter.get_names(oC)
   end
   helper_method :get_names
+
+   def shorten(str)
+      if str.length > 55
+        return str[0..55] +"..."
+      else
+        return str  
+      end
+    end
+    helper_method :shorten
   
   private
     # Use callbacks to share common setup or constraints between actions.

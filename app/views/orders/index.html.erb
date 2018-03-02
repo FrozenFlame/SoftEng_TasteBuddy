@@ -33,7 +33,7 @@
             <tr>
               <td><%= order.orderCode %></td> 
               <td><%= order.orderDate %></td> 
-              <td><%= get_names(order.orderContents) %></td> 
+              <td><%= shorten(get_names(order.orderContents)) %></td> 
               <!-- total order price at this part --> 
               <%# order.orderContents.each do |item|%>
                 <%# total_price += price[1] %>
