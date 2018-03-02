@@ -11,7 +11,7 @@
             <!--<button type="button" id="SearchButton" class="btn">Search</button>
             <input type="text" id="search" name="search" class="SearchBar" placeholder="Search">-->
             <%= text_field_tag :search, params[:search], placeholder:'Search...' %>
-            <%= button_tag "Search", name: nil, class:'btn'%>
+            <%= button_tag "Search", name: nil, class:'btn' %>
           <% end %>
         </div> 
       </div>   
@@ -35,7 +35,7 @@
               <td><%= product.prodCode %> </td> 
               <td><%= product.prodCategory %> </td> 
               <td><%= product.prodName %> </td> 
-              <td><%= product.prodDesc %> </td> 
+              <td><%= shorten(product.prodDesc) %> </td> <!-- there must be a better way to truncate this --> 
               <td><%= number_to_currency(product.price, :unit =>'P') %> </td> 
               <td>
               <%= link_to 'Show', product, class:'btn'%>
@@ -53,7 +53,7 @@
 
 <%# The syntax here is link_to 'Text user sees', actual link, 'further items here are other attributes on the tag' %>
 
-<%= link_to 'New Product', new_product_path, class:'btn btn_new'%> 
+<%= link_to 'New Product', new_product_path, class:'btn btn_new' %> 
 </div>
 <!-- MEGA COMMENT
 <!-- itemLayer 

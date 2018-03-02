@@ -24,7 +24,8 @@
         <!-- navbar right side --> 
         <!-- differentiate from logged in to a guest user -->
         <ul class="nav navbar-nav navbar-right">
-          <li>
+        <!-- search bar -->
+        <!--<li>
               <div class="col-lg-12">
                 <form class="navbar-form" role="search"> 
                   <div class="input-group">
@@ -35,19 +36,61 @@
                   </div>
               </form>
               </div>
-          </li>
-          <li><a href="signup.html"><span class="fas fa-user" ></span> Sign Up</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><span class="fa fa-sign-in-alt"></span> Login</a></li>
-              </ul>
-          </li>
+          </li> -->
+          <li class="nav-item"><a href="#"><span class="fas fa-user"></span>Sign Up</a></li>
+          <li class="nav-item"><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><span class="fa fa-sign-in-alt"></span>Login</a></li>
         </ul>
       <!-- navbar right side end -->
+        
+      <!-- Start of Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Login</h2>
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>-->
+      </div>
+      <div class="modal-body">
+        <form > <!--php functionality inserted in form tag-->
+          <div class="form-group">
+            <label for="Username" class="form-control-label">Username</label>
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input type="text" class="form-control" name="usrname" id="Username-modal" placeholder="Enter Username">
+            <!--name="usrname" is what php will use to reference this-->
+              </div>
+            
+          </div>
+            
+          <div class="form-group">
+            <label for="Password" class="form-control-label">Password</label>
+                <div class="input-group">
+                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="password" class="form-control" name="password" id="Password-modal" placeholder="Enter Password" autocomplete="new-password"></input>
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="button" id="seePwdBtnModal">
+                        <i class="glyphicon glyphicon-eye-close"></i>
+                      </button>
+                    </div>
+                </div>
+          </div>
+          <label id="wrongusr"></label> <!--ajax will change this label if user enters invalid data -->
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary" id = "bloginmdl">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of Login Modal -->
+      
       </div>
     </nav>
     <br/>
-
-    <div class="container"> <!-- this is where your ruby views get inserted -->
       <%= yield %>
-    </div>
   </body>
 </html>

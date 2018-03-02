@@ -15,18 +15,20 @@ db.orders.insert
 )
 
 
-db.orders.insert({orderCode:"O00001",orderDate:new ISODate("2018-02-22 23:20"),orderUser:"U00001",orderContents:[["00001",2],["00002",1],["00003",5]],orderNames:"Strawberry Cake, Chocolate Cake, Cookie Cake",deleted:false})
+db.orders.insert({orderCode:"O00001",orderDate:new ISODate("2018-02-22 23:20"),orderUser:"U00001",orderContents:[["00001",  2],["00002",1],["00003",5]],orderNames:"Strawberry Cake, Chocolate Cake, Cookie Cake",deleted:false})
 db.orders.insert({orderCode:"O00002",orderDate:new ISODate("2018-02-25 23:20"),orderUser:"U00002",orderContents:[["00005",3],["00006",2]],orderNames:"Mud Cake, Heart Cookie",deleted:false})
 db.orders.insert({orderCode:"O00003",orderDate:new ISODate("2018-02-27 23:20"),orderUser:"U00001",orderContents:[["00003",1],["00002",1]],orderNames:"Cookie Cake, Chocolate Cake",deleted:false})
 db.orders.insert({orderCode:"O00004",orderDate:new ISODate("2018-02-27 23:20"),orderUser:"U00002",orderContents:[["00004",1]],orderNames:"Rubyrail Cake",deleted:false})
 
-
-db.users.insert({userid:"U00001", username:"fake", password:"legit", orders:["O00001", "O00003"]})
-db.users.insert({userid:"U00002", username:"real", password:"jebait", orders:["O00002"]})
+db.users.insert({userid:"U00002", username:"real", password:"jebait", orders:["O00002"], cart:[]})
+db.users.insert({userid:"U00003", username:"busydog", password:"anjing", orders:[], cart:[["00006", 2],["00004", 1]]})
 
 db.products.insert({prodCode:"00001", prodCategory:"Cakes", prodName:"Strawberry Cake", prodDesc:"Delicious", price: 100.0, deleted: false, updated_at: new Date(), created_at:new Date()})
 db.products.insert({prodCode:"00002", prodCategory:"Cakes", prodName:"Chocolate Cake", prodDesc:"Sweet", price: 125.0, deleted: false, updated_at: new Date(), created_at:new Date()})
 db.products.insert({prodCode:"00003", prodCategory:"Cakes", prodName:"Cookie Cake", prodDesc:"Crunchy", price: 250.0, deleted: false, updated_at: new Date(), created_at:new Date()})
-db.products.insert({prodCode:"00004", prodCategory:"Cakes", prodName:"Rubyrail Cake", prodDesc:"A cake that somehow cooked and appeared on its own", price: 399.99, deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00004", prodCategory:"Cakes", prodName:"Rubyrail Cake", prodDesc:"A cake that somehow cooked and appeared on its own.", price: 399.99, deleted: false, updated_at: new Date(), created_at:new Date()})
 db.products.insert({prodCode:"00005", prodCategory:"Cakes", prodName:"Mud Cake", prodDesc:"Chocolatey goodness", price: 99.99, deleted: false, updated_at: new Date(), created_at:new Date()})
 db.products.insert({prodCode:"00006", prodCategory:"Cookies", prodName:"Heart Cookie", prodDesc:"A delicious and healthy snack", price: 19.99, deleted: false, updated_at: new Date(), created_at:new Date()})
+
+For login etc admin things, we're going to take a blinding approach. Basically, we just prevent users from seeing what
+the admin can see. This will simplify everything. Screw great systems.
