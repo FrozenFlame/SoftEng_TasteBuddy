@@ -1,3 +1,4 @@
+<!-- everyone can see this page -->
 <div id="header" class="header" >
     <div class="container">
         <div class="row">
@@ -44,205 +45,92 @@
                 <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
               </a>
             </div>
-      
         </div>
     </div>
 </div>
 
 <div id="thumbnail" class="thumbnail" style="margin-top:2%;">
-    <div class="container-fluid">
-        <h2>Cakes</h2>
-          <div class="row text-center text-lg-left">
-              
+  <div class="container-fluid">
+    <!-- flesh this out more some time, integrate search function -->
+      <h2>Cakes</h2>
+      <div class="row text-center text-lg-left">
+      <% @products.each do |product| %>
+        <% if not product.isDeleted? %>
+          <% if product.prodCategory.casecmp("Cakes") == 0 %>
             <div class="col-lg-3 col-md-3 col-xs-6">
               <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                <b style="color: #555555; text-decoration: none;"> <%= product.prodName %></b>
+                <!--<img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">-->
+                 <%= image_tag("cakes/applecinamon.jpg", size:"400x300", :class =>"img-fluid img-thumbnail")%>
+                <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc) %></text>
               </a>
             </div>
-              <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-              </div>  
-        </div>
-    </div>
-</div>
-
-
-
-<div id="thumbnail" class="thumbnail" style="margin-top:2%;">
-    <div class="container-fluid">
-        <h2>Cupcakes</h2>
-          <div class="row text-center text-lg-left">
-              
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-              <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-              </div>  
-        </div>
-    </div>
+          <% end %>
+        <% end %>
+      <% end %>
+      </div>
+  </div>
 </div>
 
 <div id="thumbnail" class="thumbnail" style="margin-top:2%;">
-    <div class="container-fluid">
-        <h2>Cookies</h2>
-          <div class="row text-center text-lg-left">
-              
+  <div class="container-fluid">
+      <h2>Cupcakes</h2>
+      <div class="row text-center text-lg-left">
+      <% @products.each do |product| %>
+        <% if not product.isDeleted? %>
+          <% if product.prodCategory.casecmp("Cupcakes") == 0 %>
             <div class="col-lg-3 col-md-3 col-xs-6">
               <a href="#" class="d-block mb-4 h-100">
+                <b style="color: #555555; text-decoration: none;"> <%= product.prodName %></b>
                 <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc) %></text>
               </a>
             </div>
-              <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+      </div>
+  </div>
+</div>
+
+<div id="thumbnail" class="thumbnail" style="margin-top:2%;">
+  <div class="container-fluid">
+      <h2>Cookies</h2>
+      <div class="row text-center text-lg-left">
+      <% @products.each do |product| %>
+        <% if not product.isDeleted? %>
+          <% if product.prodCategory.casecmp("Cookies") == 0 %>
             <div class="col-lg-3 col-md-3 col-xs-6">
               <a href="#" class="d-block mb-4 h-100">
+                <b style="color: #555555; text-decoration: none;"> <%= product.prodName %></b>
                 <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc) %></text>
               </a>
             </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-              </div>  
-        </div>
-    </div>
+          <% end %>
+        <% end %>
+      <% end %>
+      </div>
+  </div>
 </div>
 
 <div id="thumbnail" class="thumbnail" style="margin-top:2%;">
     <div class="container-fluid">
         <h2>Bread</h2>
-          <div class="row text-center text-lg-left">
-              
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
+        <div class="row text-center text-lg-left">
+        <% @products.each do |product| %>
+          <% if not product.isDeleted? %>
+            <% if product.prodCategory.casecmp("Bread") == 0 %>
               <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-            </div>
-            <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-              </a>
-              </div>  
+                <a href="#" class="d-block mb-4 h-100">
+                  <b style="color: #555555; text-decoration: none;"> <%= product.prodName %></b>
+                  <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
+                  <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc) %></text>
+                </a>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
         </div>
     </div>
 </div>
