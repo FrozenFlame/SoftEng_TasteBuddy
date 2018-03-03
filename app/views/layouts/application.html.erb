@@ -20,8 +20,6 @@
           <li class="nav-item active">
             <!--<a class="nav-link" href="">Home<span class="sr-only">(current)</span></a>-->
               <%= link_to "Home", root_url, class:"nav-link" %>
-              
-            
           </li>
         </ul>
         
@@ -42,15 +40,23 @@
               </div>
           </li> -->
           <!--<li class="nav-item"><a href="#"><span class="fas fa-user"></span>Sign Up</a></li>-->
-          <%= link_to signup_path, class:"nav-link" do %>
-            <%= content_tag(:span, "", :class => "fas fa-user") %>
-            Sign Up
+          <% if session[:user_id] == nil %> <!-- this code makes it so it renderrs signup and login if you're not logged in' -->
+            <%= link_to signup_path, class:"nav-link" do %>
+              <%= content_tag(:span, "", :class => "fas fa-user") %>
+              Sign Up
+            <% end %>
+            <!--<li class="nav-item"><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><span class="fa fa-sign-in-alt"></span>Login</a></li>-->
+            <%= link_to new_session_path, class:"nav-link" do %>
+              <%= content_tag(:span, "", :class => "fa fa-sign-in-alt") %>
+              Log In
+            <% end %>
+          <% else %>
+            <%= link_to log_out, class:"nav-link" do %>
+              <%= content_tag(:span, "", :class => "fas fa-user") %>
+              Log Out
+            <% end %>
           <% end %>
-          <!--<li class="nav-item"><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><span class="fa fa-sign-in-alt"></span>Login</a></li>-->
-          <%= link_to login_path, class:"nav-link" do %>
-            <%= content_tag(:span, "", :class => "fa fa-sign-in-alt") %>
-            Login
-          <% end %>
+          
         </ul>
       <!-- navbar right side end -->
         

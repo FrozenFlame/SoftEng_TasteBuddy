@@ -12,10 +12,9 @@ Rails.application.routes.draw do
   
   # signup routes
   get 'users' => 'users#new', as: 'signup'
-  get 'users/login' => 'users#new', as: 'login'
 
   #temporary root: products, it should be front page
-  root 'products#index'
+  root 'main_page#index'
 
   resources :products
   resources :orders
