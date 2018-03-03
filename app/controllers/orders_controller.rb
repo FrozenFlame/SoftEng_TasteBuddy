@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
       puts "[order_controller] db.order empty, first code generated"
       @genCode = '00001'
     else
-      @prevOrd = Order.last().orderCode.to_i
+      @prevOrd = Order.last().orderCode[1..5].to_i
       @prevOrd = @prevOrd +1
       @genCode = @prevOrd.to_s.rjust(5, "0")
     end

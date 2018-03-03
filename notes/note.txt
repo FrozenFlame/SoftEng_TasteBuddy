@@ -20,8 +20,9 @@ db.orders.insert({orderCode:"O00002",orderDate:new ISODate("2018-02-25 23:20"),o
 db.orders.insert({orderCode:"O00003",orderDate:new ISODate("2018-02-27 23:20"),orderUser:"U00001",orderContents:[["00003",1],["00002",1]],orderNames:"Cookie Cake, Chocolate Cake",deleted:false})
 db.orders.insert({orderCode:"O00004",orderDate:new ISODate("2018-02-27 23:20"),orderUser:"U00002",orderContents:[["00004",1]],orderNames:"Rubyrail Cake",deleted:false})
 
-db.users.insert({userid:"U00002", username:"real", password:"jebait", orders:["O00002"], cart:[]})
-db.users.insert({userid:"U00003", username:"busydog", password:"anjing", orders:[], cart:[["00006", 2],["00004", 1]]})
+db.users.insert({userid:"U00001", username:"fake", password:"legit", orders:["O00001","O00003"], cart:[],updated_at: new Date(), created_at:new Date()})
+db.users.insert({userid:"U00002", username:"real", password:"jebait", orders:["O00002"], cart:[],updated_at: new Date(), created_at:new Date()})
+db.users.insert({userid:"U00003", username:"busydog", password:"anjing", orders:[], cart:[["00006", 2],["00004", 1]],updated_at: new Date(), created_at:new Date()})
 
 db.products.insert({prodCode:"00001", prodCategory:"Cakes", prodName:"Strawberry Cake", prodDesc:"Delicious", price: 100.0, deleted: false, updated_at: new Date(), created_at:new Date()})
 db.products.insert({prodCode:"00002", prodCategory:"Cakes", prodName:"Chocolate Cake", prodDesc:"Sweet", price: 125.0, deleted: false, updated_at: new Date(), created_at:new Date()})

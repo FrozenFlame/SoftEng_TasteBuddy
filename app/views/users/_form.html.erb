@@ -1,0 +1,38 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        <%= pluralize(product.errors.count, "error") %> prohibited this user from being saved:
+      </div>
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li> <%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%# temporary field, this is just to show what their userid would be %>
+  <div class="field">
+    <%= form.label 'Userid' %>
+    <%= form.text_field :userid, id: :user_userid, :readonly=>true, class:'form-control' , value:@genCode%>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Username' %>
+    <%= form.text_field :username, id: :user_username, class:'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Password' %>
+    <%= form.password_field :password, id: :user_password, class:'form-control' %>
+  </div>
+  <!--temporarily hide confirm, cant get it to work yet-->
+  <!--<div class="field">-->
+    <%# form.label 'Confirm Password' %>
+    <%# form.password_field :password_confirmation, id: :user_password_confirmation, class:'form-control' %>
+  <!--</div>-->
+  <div class="actions">
+    <%= form.submit 'Sign up!', class:'btn btn_new'%>
+  </div>
+<% end %>

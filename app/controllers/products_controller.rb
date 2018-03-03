@@ -38,8 +38,11 @@ class ProductsController < ApplicationController
       @genCode = '00001'
     else
       @prevProd = Product.last().prodCode.to_i
+      puts "WARNING WARNING "
+      puts @prevProd.to_s
       @prevProd = @prevProd +1
       @genCode = @prevProd.to_s.rjust(5, "0")
+    
     end
   end
 
