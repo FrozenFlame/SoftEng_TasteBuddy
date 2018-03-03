@@ -22,7 +22,12 @@
 
   <div class="field">
     <%= form.label 'Category' %>
-    <%= form.text_field :prodCategory, id: :product_prodCategory, class:'form-control' %>
+    
+    <%# form.text_field :prodCategory, id: :product_prodCategory, class:'form-control' %>
+    <!-- this one is a drop down -->
+    <div class="dropdown">
+      <%= form.select :prodCategory, ['Bread','Cakes','Cookies','Cupcakes'], class:'form-control' %>
+    </div>
   </div>
 
   <div class="field">

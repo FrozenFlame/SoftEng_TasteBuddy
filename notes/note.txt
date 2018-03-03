@@ -1,8 +1,6 @@
 <mongodb sample scripts (array)>
 db.orders.insert({orderCode:"O00001", orderDate:new Date("<2018-02-22>"), orderUser: "U00001":, orderProds: ["00001", "00002", "00003"], orderQty:[2,1,2] deleted: false})
 
-
-
 db.orders.insert
 (
   {
@@ -14,15 +12,15 @@ db.orders.insert
   }
 )
 
-
 db.orders.insert({orderCode:"O00001",orderDate:new ISODate("2018-02-22 23:20"),orderUser:"U00001",orderContents:[["00001",  2],["00002",1],["00003",5]],orderNames:"Strawberry Cake, Chocolate Cake, Cookie Cake",deleted:false})
 db.orders.insert({orderCode:"O00002",orderDate:new ISODate("2018-02-25 23:20"),orderUser:"U00002",orderContents:[["00005",3],["00006",2]],orderNames:"Mud Cake, Heart Cookie",deleted:false})
 db.orders.insert({orderCode:"O00003",orderDate:new ISODate("2018-02-27 23:20"),orderUser:"U00001",orderContents:[["00003",1],["00002",1]],orderNames:"Cookie Cake, Chocolate Cake",deleted:false})
 db.orders.insert({orderCode:"O00004",orderDate:new ISODate("2018-02-27 23:20"),orderUser:"U00002",orderContents:[["00004",1]],orderNames:"Rubyrail Cake",deleted:false})
 
-db.users.insert({userid:"U00001", username:"fake", password:"legit", orders:["O00001","O00003"], cart:[],updated_at: new Date(), created_at:new Date()})
-db.users.insert({userid:"U00002", username:"real", password:"jebait", orders:["O00002"], cart:[],updated_at: new Date(), created_at:new Date()})
-db.users.insert({userid:"U00003", username:"busydog", password:"anjing", orders:[], cart:[["00006", 2],["00004", 1]],updated_at: new Date(), created_at:new Date()})
+db.users.insert({userid:"U00001", username:"fake", password:"legit", orders:["O00001","O00003"], cart:[],updated_at: new Date(), created_at:new Date(), isAdmin:false})
+db.users.insert({userid:"U00002", username:"real", password:"jebait", orders:["O00002"], cart:[],updated_at: new Date(), created_at:new Date(), isAdmin:false})
+db.users.insert({userid:"U00003", username:"busydog", password:"anjing", orders:[], cart:[["00006", 2],["00004", 1]],updated_at: new Date(), created_at:new Date(), isAdmin:false})
+db.users.insert({userid:"U00004", username:"jerry", password:"jerry", orders:[], cart:[],updated_at: new Date(), created_at:new Date(), isAdmin:true})
 
 db.products.insert({prodCode:"00001", prodCategory:"Cakes", prodName:"Strawberry Cake", prodDesc:"Delicious", price: 100.0, deleted: false, updated_at: new Date(), created_at:new Date()})
 db.products.insert({prodCode:"00002", prodCategory:"Cakes", prodName:"Chocolate Cake", prodDesc:"Sweet", price: 125.0, deleted: false, updated_at: new Date(), created_at:new Date()})
