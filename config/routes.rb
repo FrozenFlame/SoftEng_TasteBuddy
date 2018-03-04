@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'ordersummary' => 'ordersummary#index'
   
   # signup routes
-  get 'users' => 'users#new', as: 'signup'
+  get 'users' => 'users#new', as:    'signup'
   
   get 'logout' => 'sessions#logout'
   #temporary root: products, it should be front page
