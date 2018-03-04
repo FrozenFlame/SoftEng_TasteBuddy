@@ -14,59 +14,7 @@
     </head>
     
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <%= link_to "TasteBuddy", root_url, class:"navbar-brand" %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to "Home", root_url, class:"nav-link" %>
-          </li>
-        </ul>
-        
-        <!-- navbar right side --> 
-        <!-- differentiate from logged in to a guest user -->
-        <ul class="nav navbar-nav navbar-right">
-        <!-- search bar -->
-        <!--<li>
-              <div class="col-lg-12">
-                <form class="navbar-form" role="search"> 
-                  <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search" name = "query" id="navbar-search">
-                      <div class="input-group-btn">
-                      <button class="btn btn-default" type="submit" id ='navbar-search-button'><span class="fas fa-search" aria-hidden="true"></span></button>
-                      </div>
-                  </div>
-              </form>
-              </div>
-          </li> -->
-          <li class="nav-item"><a href="#" data-toggle="modal" data-target="#mySignUp"><span class="fas fa-user"></span>Sign Up</a></li>
-          <li class="nav-item"><a href="#" data-toggle="modal" data-target="#myLogin"><span class="fa fa-sign-in-alt"></span>Login</a></li>
-            
-            
-            
-          <!--<li class="nav-item"><a href="#"><span class="fas fa-user"></span>Sign Up</a></li>-->
-          <% if session[:user_id] == nil %> <!-- this code makes it so it renderrs signup and login if you're not logged in' -->
-            <%= link_to signup_path, class:"nav-link" do %>
-              <%= content_tag(:span, "", :class => "fas fa-user") %>
-              Sign Up
-            <% end %>
-            <!--<li class="nav-item"><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><span class="fa fa-sign-in-alt"></span>Login</a></li>-->
-            <%= link_to new_session_path, class:"nav-link" do %>
-              <%= content_tag(:span, "", :class => "fa fa-sign-in-alt") %>
-              Log In
-            <% end %>
-          <% else %>
-            <%= link_to logout_path, :controller => :sessions_controller, :action => :logout, class:"nav-link" do %>
-              <%= content_tag(:span, "", :class => "fas fa-user") %>
-              Log Out
-            <% end %>
-          <% end %>
-        </ul>
-      <!-- navbar right side end -->
-        
+      
           <!-- Login Start-->
                <div class="modal_container">
                     <div class="modal fade" id="myLogin">
@@ -177,6 +125,59 @@
                             </div>
                         </div>
                     </div>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <%= link_to "TasteBuddy", root_url, class:"navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Home", root_url, class:"nav-link" %>
+          </li>
+        </ul>
+        
+        <!-- navbar right side --> 
+        <!-- differentiate from logged in to a guest user -->
+        <ul class="nav navbar-nav navbar-right">
+        <!-- search bar -->
+        <!--<li>
+              <div class="col-lg-12">
+                <form class="navbar-form" role="search"> 
+                  <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search" name = "query" id="navbar-search">
+                      <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit" id ='navbar-search-button'><span class="fas fa-search" aria-hidden="true"></span></button>
+                      </div>
+                  </div>
+              </form>
+              </div>
+          </li> -->
+          <li class="nav-item"><a href="#" data-toggle="modal" data-target="#mySignUp"><span class="fas fa-user"></span>Sign Up</a></li>
+          <li class="nav-item"><a href="#" data-toggle="modal" data-target="#myLogin"><span class="fa fa-sign-in-alt"></span>Login</a></li>
+            
+            
+            
+          <!--<li class="nav-item"><a href="#"><span class="fas fa-user"></span>Sign Up</a></li>-->
+          <% if session[:user_id] == nil %> <!-- this code makes it so it renderrs signup and login if you're not logged in' -->
+            <%= link_to signup_path, class:"nav-link" do %>
+              <%= content_tag(:span, "", :class => "fas fa-user") %>
+              Sign Up
+            <% end %>
+            <!--<li class="nav-item"><a href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><span class="fa fa-sign-in-alt"></span>Login</a></li>-->
+            <%= link_to new_session_path, class:"nav-link" do %>
+              <%= content_tag(:span, "", :class => "fa fa-sign-in-alt") %>
+              Log In
+            <% end %>
+          <% else %>
+            <%= link_to logout_path, :controller => :sessions_controller, :action => :logout, class:"nav-link" do %>
+              <%= content_tag(:span, "", :class => "fas fa-user") %>
+              Log Out
+            <% end %>
+          <% end %>
+        </ul>
+      <!-- navbar right side end -->
+        
           
       </div>
     </nav>
