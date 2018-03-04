@@ -27,9 +27,20 @@
                     <%# text_field_tag :prodCode,%>
                     <%= hidden_field_tag :prodCode, @product.prodCode %>
                 </div>
-                <%= submit_tag 'Add to Cart', class:'button buttonbuy' %>
+                <% if session[:user_id] != nil %>
+                    <% puts "[show.html - main_page] user is logged in" %>
+                    <%= submit_tag 'Add to Cart', class:'button buttonbuy' %>
+                   
+                   
+                <% end %>
+                
             <% end %>
         </div>
+        <% if session[:user_id] == nil %>
+            <!-- decoy add to cart button -->
+                        <% puts "[show.html - main_page] no login found" %>
+            <%= button_to "Add to Cart", must_be_logged_path,  method: :get, class:'button buttonbuy' %>
+         <% end %>
         <!--<div class="clear"></div> idk what this does -->
     </div>
 </div>

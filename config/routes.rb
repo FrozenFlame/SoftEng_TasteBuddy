@@ -35,7 +35,8 @@ Rails.application.routes.draw do
 
 ###############################################################################################################
 
-  #temporary root: products, it should be front page
+  get '/items' => 'main_page#loginfirstflash', as: 'must_be_logged'
+
   root 'main_page#index'
 
   resources :products

@@ -15,4 +15,8 @@ class MainPageController < ApplicationController
  
   def putInCart
   end
+  
+  def loginfirstflash
+    redirect_back(fallback_location: :back)
+  end
 end
