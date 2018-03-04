@@ -11,7 +11,9 @@ class CartController < ApplicationController
             ar = [prodcode, qty.to_i]
             @usercart = User.find_by(userid: session[:user_id])
             puts "[cart_controller] user cart 1 %s " % @usercart.cart.to_s
-            @usercart.add_to_set(cart: [ar])
+            # @usercart.add_to_set(cart: [ar])
+            @usercart.cart.push(ar)
+            @usercart.save
             puts "[cart_controller] user cart 2 %s " % @usercart.cart.to_s
             puts "[cart_controller] <%s> prod" % prodcode
             puts "[cart_controller] at least you made it. %d " % qty.to_s

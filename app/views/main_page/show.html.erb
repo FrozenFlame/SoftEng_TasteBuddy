@@ -31,16 +31,18 @@
                     <% puts "[show.html - main_page] user is logged in" %>
                     <%= submit_tag 'Add to Cart', class:'button buttonbuy' %>
                    
-                   
                 <% end %>
-                
             <% end %>
         </div>
-        <% if session[:user_id] == nil %>
+         <% if session[:user_id] == nil %>
             <!-- decoy add to cart button -->
-                        <% puts "[show.html - main_page] no login found" %>
-            <%= button_to "Add to Cart", must_be_logged_path,  method: :get, class:'button buttonbuy' %>
+            <% puts "[show.html.erb - main_page] no login found" %>
+            <%# button_to "Add to Cart.", must_be_logged_path,  method: :get, class:'button buttonbuy' %>
+            <%= button_to "Add to Cart.", dos_must_be_logged_path(@event),  :remote => true , class:'button buttonbuy' %>
          <% end %>
         <!--<div class="clear"></div> idk what this does -->
     </div>
+    
+        <div class="modal" style="display:none;">
+        </div>
 </div>
