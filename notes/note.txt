@@ -33,3 +33,11 @@ db.products.insert({prodCode:"00006", prodCategory:"Cookies", prodName:"Heart Co
 
 For login etc admin things, we're going to take a blinding approach. Basically, we just prevent users from seeing what
 the admin can see. This will simplify everything. Screw great systems.
+
+//testing new 2d array structure
+db.users.insert({userid:"U00003", username:"busydog", password:"anjing", orders:[], cart:[["00006", 2],["00004", 1]],updated_at: new Date(), created_at:new Date(), isAdmin:false})
+
+db.users.update({userid:"U00003"},{$set : {"cart":[]}})
+
+^ reference
+db.users2.insert({userid:"U00003", username:"busydog", password:"anjing", orders:[], cart:[{id:1, code:"00006",qty:2},{id:2, code:"00004",qty:1}],updated_at: new Date(), created_at:new Date(), isAdmin:false})
