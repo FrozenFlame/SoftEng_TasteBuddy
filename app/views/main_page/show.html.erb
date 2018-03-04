@@ -5,18 +5,15 @@
         <div class="leftcol">
         <%= image_tag("cakes/carrotcake.jpg", size:"300x500") %>
         </div>
-        
         <div class="rightcol" style="align-content: center">    
             <h4><i class='category'><%= @product.prodCategory %></i></h4>
             <h3><b class='name' ><%= @product.prodName %></b></h3>
         </div>
         <br>
-        
         <div class="righttext" style="align-content: left">
             <p><%= @product.prodDesc %></p>
             <p><%= number_to_currency(@product.price, :unit =>'₱') %></p>
         </div>
-
         <div class ="rightcol"> 
             <%# form_tag("/cart/place", method: "put") do |form| %>
             <%= form_tag(add_to_cart_path, method: "put") do %>
