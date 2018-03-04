@@ -6,9 +6,134 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    
+    
+</head>
 
   <body>
+             <!-- Login Start-->
+                    <div class="modal_container">
+                    <div class="modal fade" id="popUpLogin">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- header-->
+                                <div class="modal-header">
+                                    <center><h2>LOGIN</h2></center>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- body-->
+                                <div class="modal-body">
+                                    <form role="form">
+                                        
+                                      <label>Email</label>  
+                                      <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="glyphicon glyphicon-envelope"></i>
+                                        </div>
+                                        <input type="email" class="form-control" placeholder="Email" name="Email" required="Email" >                                 
+                                      </div>
+
+                                      
+                                      <label>Password</label>
+                                      <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i  class="glyphicon glyphicon-lock"></i>
+                                        </div>
+                                        <input type="Password" class="form-control" placeholder="Password" name="Password" required="Password"  >
+                                      </div>
+                                    </form>
+                                </div>
+                                
+                                <!--footer-->
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary btn_edit">LOGIN </button>
+                                </div>
+                                
+    
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                  <!-- End-->
+                  <!-- Register Start-->
+                    
+                    <div class="modal fade" id="popUpSignUp">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- header-->
+                                <div class="modal-header">
+                                    <center><h2>REGISTER</h2></center>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- body-->
+                                <div class="modal-body">
+                                    <form role="form">
+                                        
+                                        
+                                      <label>First Name</label>
+                                      <div class="input-group">
+                                        <div class="input-group-addon">
+                                          <i class="glyphicon glyphicon-user"></i>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="First Name" name="FirstName" required="FirstName"  >
+                                    </div>
+                                    
+                                        
+                                    <label>Last Name</label>
+                                    <div class="input-group">
+                                      <div class="input-group-addon">
+                                       <i class="glyphicon glyphicon-user"></i>
+                                      </div>
+                                        <input type="text" class="form-control" placeholder="Last Name" name="LastName" required="LastName"  >
+                                    </div>
+                                        
+                                    <label>Email</label>
+                                    <div class="input-group">
+                                      <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-envelope"></i>
+                                      </div>
+                                        <input type="Email" class="form-control" placeholder="Email" name="Email" required="Email"  >
+                                    </div>
+                                        
+                                        
+                                    <label>Password</label>    
+                                    <div class="input-group">
+                                      <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-lock"></i>
+                                      </div>
+                                        <input type="Password" class="form-control" placeholder="********" name="Password" required="Password"  >
+                                    </div>
+
+                                    <label>Confirm Password</label>
+                                    <div class="input-group">
+                                      <div class="input-group-addon">
+                                        <i class="glyphicon glyphicon-lock"></i>
+                                      </div> 
+                                        <input type="Password" class="form-control" placeholder="********" name="Re_Password" required="Re_Password">
+                                    </div>
+                                    </form>
+                                </div>
+                                
+                                <!--footer-->
+                                <div class="modal-footer">
+                                        <button type="input" name="register" class="btn btn-primary btn_edit" >Register</button>
+                                </div>
+                                
+    
+                            </div>
+                        </div>
+                    </div>
+                        
+      
+      
+      
+      
+      
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <%= link_to "TasteBuddy", root_url, class:"navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +179,8 @@
               </form>
               </div>
           </li> -->
-          <li class="nav-item"><a href="#"><span class="fas fa-user"></span>Sign Up</a></li>
+            
+          <li class="nav-item"><a href="#" data-toggle="modal" data-target="#popUpSignUp" data-whatever="@mdo"><span class="fas fa-user"></span>Sign Up</a></li>
           <li class="nav-item"><a href="#" data-toggle="modal" data-target="#popUpLogin" data-whatever="@mdo"><span class="fa fa-sign-in-alt"></span>Login</a></li>
           <!--<li class="nav-item"><a href="#"><span class="fas fa-user"></span>Sign Up</a></li>-->
           <% if session[:user_id] == nil %> <!-- this code makes it so it renderrs signup and login if you're not logged in' -->
@@ -81,51 +207,6 @@
         </ul>
       <!-- navbar right side end -->
         
-      <!-- Login Start-->
-                  <form method="post" action="login.php">
-                    <div class="modal_container">
-                    <div class="modal fade" id="popUpLogin">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <!-- header-->
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <center><h2>LOGIN</h2></center>
-                                </div>
-                                <!-- body-->
-                                <div class="modal-body">
-                                    <form role="form">
-                                        
-                                      <label>Email</label>  
-                                      <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="glyphicon glyphicon-envelope"></i>
-                                        </div>
-                                        <input type="email" class="form-control" placeholder="Email" name="Email" required="Email" onkeyup="combinationValidation(this)">                                 
-                                      </div>
-
-                                      
-                                      <label>Password</label>
-                                      <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i  class="glyphicon glyphicon-lock"></i>
-                                        </div>
-                                        <input type="Password" class="form-control" placeholder="Password" name="Password" required="Password" onkeyup="noSpecialCharacter(this)" >
-                                      </div>
-                                    </form>
-                                </div>
-                                
-                                <!--footer-->
-                                <div class="modal-footer">
-                                    <button class="btn btn-primary">LOGIN </button>
-                                </div>
-    
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                  </form>
-                  <!-- End-->
       </div>
     </nav>
     <br/>
