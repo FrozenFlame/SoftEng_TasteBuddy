@@ -69,7 +69,7 @@
             <% end %>
             
           <% else %>
-            <%= link_to logout_path, :controller => :sessions_controller, :action => :cart, class:"nav-link" do %>
+            <%= link_to cart_path, :controller => :sessions_controller, :action => :cart, class:"nav-link" do %>
               <%= content_tag(:span, "", :class => "fas fa-shopping-cart") %>
               Cart <!-- add in here -->
             <% end %>

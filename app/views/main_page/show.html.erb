@@ -1,13 +1,38 @@
+<br/>
+<br/>
+<div class= "container">
+    <div class="cf">
+        <div class="leftcol">
+        <%= image_tag("cakes/carrotcake.jpg", size:"300x500") %>
+        </div>
+        
+        <div class="rightcol" style="align-content: center">    
+            <h4><i class='category'><%= @product.prodCategory %></i></h4>
+            <h3><b class='name' ><%= @product.prodName %></b></h3>
+        </div>
+        <br>
+        
+        <div class="righttext" style="align-content: left">
+            <p><%= @product.prodDesc %></p>
+            <p><%= number_to_currency(@product.price, :unit =>'₱') %></p>
+        </div>
 
-    
-    
-    
-<div class="cf">
-<div class="leftcol">
-<img src="cakes/carrotcake.jpg" ></div>
-<div class="rightcol" style="align-content: center"><h1>Description</h1></div><br>
-     <div class="righttext" style="align-content: left">
-        <p>this cookies is very delicious which made me cry when i eat this. this cookies makes me happy that when my mouth bite it i forgot my loneliness</p>
-         <p><button class="button buttonbuy">BUY</button><p>
+        <div class ="rightcol"> 
+            <%# form_tag("/cart/place", method: "put") do |form| %>
+            <%= form_tag(add_to_cart_path, method: "put") do %>
+                <div class="field">
+                    <%= label_tag :qty, 'Quantity x', style:"display: inline;" %>
+                    <%= text_field_tag :qty, 1 %>
+                </div>
+                <!-- sneaky hidden tag for prod code -->
+                <div class="field">
+                    <%# label_tag :prodCode %>
+                    <%# text_field_tag :prodCode,%>
+                    <%= hidden_field_tag :prodCode, @product.prodCode %>
+                </div>
+                <%= submit_tag 'Add to Cart', class:'button buttonbuy' %>
+            <% end %>
+        </div>
+        <!--<div class="clear"></div> idk what this does -->
+    </div>
 </div>
-<div class="clear"></div>

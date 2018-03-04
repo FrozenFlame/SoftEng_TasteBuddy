@@ -58,7 +58,7 @@
         <% if not product.isDeleted? %>
           <% if product.prodCategory.casecmp("Cakes") == 0 %>
             <div class="col-lg-3 col-md-3 col-xs-6">
-              <%= content_tag :a, :class => "d-block mb-4 h-100" do %>
+              <%= link_to item_path(product.prodCode), :class => "d-block mb-4 h-100" do %>
               <!--<a href="#" class="d-block mb-4 h-100">-->
                 <b style="color: #555555; text-decoration: none;"> <%= product.prodName %></b>
                 <br/>

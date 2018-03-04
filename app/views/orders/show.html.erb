@@ -12,17 +12,17 @@
                             <%= image_tag("cakes/applecinamon.jpg", size:"200x140") %>
                         </div>
                         <div class="col-lg-4 col-md-4"> <!-- stylize this more -->
-                            <i> <%= @product.prodCategory %> </i>
+                            <i><%= @product.prodCategory %></i>
                             <h4><%= @product.prodName %></h4>
                             <p><%= @product.prodDesc %></p>
-                            <p>  Quantity: <%= item[1].to_i %>  </p>
+                            <p><%= number_to_currency(@product.price, :unit => '₱') %></p><br/>
+                            <p>Qty: <%= item[1].to_i %></p>
                         </div>
                         <div class="col-lg-4 col-md-4">
                            <button type="button" class="btn btn-danger btn_destroy" style="margin-top:50px;float:right;">Remove</button>
                         </div>
                     </div>
                 </div>
-                
             <% end %>
             </div>
             <div class="col-lg-5 col-md-5 col-sm-5 " id="rightPanel">
