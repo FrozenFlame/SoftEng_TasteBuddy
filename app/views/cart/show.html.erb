@@ -16,15 +16,20 @@
                             <h4><%= @product.prodName %></h4>
                             <p><%= @product.prodDesc %></p>
                             <p><%= number_to_currency(@product.price, :unit => '₱') %></p><br/>
-                            <p>Qty: <%= item[1].to_i %></p>
+                            <p>Qty: <%= text_field_tag(:qty, item[1].to_i, :disabled => true) %></p>
+                            <!--:qty, id: :qty, :readonly=>true, value:item[1].to_s-->
+                            <!--item[1].to_i -->
                         </div>
                         <div class="col-lg-4 col-md-4">
-                           <button type="button" class="btn btn-danger btn_destroy" style="margin-top:50px;float:right;">Remove</button>
-                           
-                           <button type="button" class="btn btn-primary btn_edit" style="margin-top:50px;float:right;">Edit</button> 
+                            <% @counter+=1 %>
+                           <!--<button type="button" class="btn btn-danger btn_destroy" style="margin-top:50px;float:right;">Remove</button>-->
+                           <%= button_to "Delete", rmv_cart_atindex_path, params:{index: @counter-1}, class:"btn btn-danger btn_destroy", style:"margin-top:50px;float:right;"  %>
+                           <!--<button type="button" class="btn btn-primary btn_edit" style="margin-top:50px;float:right;">Edit</button> -->
+                           <%= button_to "Edit", cart_path, :method => "get", params:{index: @counter}, class:"btn btn-primary btn_edit", style:"margin-top:50px;float:right;"  %>
                         </div>
                     </div>
                 </div>
+                <br/>
                 <% end %>
         </div>
 

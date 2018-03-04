@@ -7,16 +7,11 @@ class MainPageController < ApplicationController
     # GET /products/1
   # GET /products/1.json
   def show
-    flash.now[:notice]
     puts "[main_page_controller] Found prodCode: " +params[:id].to_s
     # we're receving a params[:id] from the outside. (e.g. /item/1 <- 1 is the :id)
     @product = Product.find_by(prodCode: params[:id])
     @cart = Cart.new
-
     
-  end
- 
-  def putInCart
   end
   
   def loginfirstflash
@@ -24,12 +19,11 @@ class MainPageController < ApplicationController
     flash[:notice] = "Please Login first"
     redirect_back(fallback_location: :back)
   end
+
   def dosloginfirstflash
     puts "[main_page_controller] action attempted before login. denada"
     flash[:notice] = "Please Login first"
     # redirect_back(fallback_location: :back)
-    
-    
     @event = Event.find(params[:id])
     respond_to do |format|
       format.js

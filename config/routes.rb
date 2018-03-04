@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get '/items/:id' => 'main_page#show', as: 'item' # this is where we go when we click an item from the front page
 
   get '/cart' => 'cart#show', as: 'cart'
+  post '/cart' => 'cart#rmv_cart_atindex', as: 'rmv_cart_atindex'
   put '/cart' => 'cart#addToCart', as: 'add_to_cart'
 
 ###############################################################################################################

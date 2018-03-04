@@ -1,8 +1,14 @@
 class CartController < ApplicationController
     def show
-        @cart = User.find_by(userid: session[:user_id]).cart
-        puts "[cart_controller] cartcontents: " +@cart.to_s
+        @counter = 0 # starting counter num
+        if session[:user_id] != nil
+            @cart = User.find_by(userid: session[:user_id]).cart
+            puts "[cart_controller] cartcontents: " +@cart.to_s
+        elsif
+            redirect_to root_url
+        end
     end
+
     def addToCart
         prodcode = params[:prodCode]
         qty = params[:qty]
@@ -52,6 +58,14 @@ class CartController < ApplicationController
         return Ordrcontentgetter.total_price(oC)
     end
     helper_method :total_price
+
+    def rmv_cart_atindex
+        puts "[cart_controller] deleting a cart entry %s" % params[:index].to_s
+        @user = User.find_by(userid: session[:user_id])
+        @user.cart.delete_at(params[:index].to_i)
+        @user.save
+        redirect_back(fallback_location: :back)
+    end
 
     private
         def empty_cart(user)
