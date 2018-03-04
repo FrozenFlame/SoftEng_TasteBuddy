@@ -34,8 +34,10 @@ Rails.application.routes.draw do
   put '/cart' => 'cart#addToCart', as: 'add_to_cart'
 
 ###############################################################################################################
-
+  post '/items' => 'main_page#dosloginfirstflash', as: 'dos_must_be_logged'
+  
   get '/items' => 'main_page#loginfirstflash', as: 'must_be_logged'
+
 
   root 'main_page#index'
 
