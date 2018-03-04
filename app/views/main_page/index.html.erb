@@ -58,14 +58,20 @@
         <% if not product.isDeleted? %>
           <% if product.prodCategory.casecmp("Cakes") == 0 %>
             <div class="col-lg-3 col-md-3 col-xs-6">
-              <a href="#" class="d-block mb-4 h-100">
+              <%= content_tag :a, :class => "d-block mb-4 h-100" do %>
+              <!--<a href="#" class="d-block mb-4 h-100">-->
                 <b style="color: #555555; text-decoration: none;"> <%= product.prodName %></b>
                 <br/>
                 <!--<img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">-->
                 <%= image_tag("cakes/carrotcake.jpg", :class =>"img-fluid img-thumbnail")%>
                 <br/>
-                <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc) %></text>
-              </a>
+                <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc, 50) %></text>
+                <br/>
+                <h4>
+                  <text style="color: #93d671; text-decoration:none;"> <%= number_to_currency(product.price, :unit => '₱') %></text>
+                </h4>
+              <!--</a>-->
+              <% end %>
             </div>
           <% end %>
         <% end %>
@@ -87,7 +93,11 @@
                 <br/>
                 <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
                 <br/>
-                <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc) %></text>
+                <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc, 50) %></text>
+                <br/>
+                <h4>
+                  <text style="color: #93d671; text-decoration:none;"> <%= number_to_currency(product.price, :unit => '₱') %></text>
+                </h4>
               </a>
             </div>
           <% end %>
@@ -110,7 +120,11 @@
                 <br/>
                 <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
                 <br/>
-                <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc) %></text>
+                <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc, 50) %></text>
+                <br/>
+                <h4>
+                  <text style="color: #93d671; text-decoration:none;"> <%= number_to_currency(product.price, :unit => '₱') %></text>
+                </h4>
               </a>
             </div>
           <% end %>
@@ -133,7 +147,11 @@
                   <br/>
                   <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
                   <br/>
-                  <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc) %></text>
+                  <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc, 50) %></text>
+                  <br/>
+                  <h4>
+                    <text style="color: #93d671; text-decoration:none;"> <%= number_to_currency(product.price, :unit => '₱') %></text>
+                  </h4>
                 </a>
               </div>
             <% end %>

@@ -105,12 +105,5 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:prodCode, :prodCategory, :prodName, :prodDesc, :price)
     end
 
-    def shorten(str)
-      if str.length > 50
-        return str[0..50] +"..."
-      else
-        return str  
-      end
-    end
-    helper_method :shorten
+   
 end

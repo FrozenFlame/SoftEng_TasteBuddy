@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'users' => 'users#new', as: 'signup'
   
   get 'logout' => 'sessions#logout'
+
   #temporary root: products, it should be front page
   root 'main_page#index'
 

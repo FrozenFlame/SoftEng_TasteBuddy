@@ -42,7 +42,7 @@
             <tr>
               <td><%= item[1].to_i %></td> 
               <td><%= @product.prodName %></td> 
-              <td><%= number_to_currency((@product.price * item[1]), :unit =>'P') %> </td>
+              <td><%= number_to_currency((@product.price * item[1]), :unit =>'₱') %> </td>
             </tr>
               <% end %> 
             
@@ -50,7 +50,7 @@
                 
                      
                 </table>
-                <h3 style="margin-top:60%;margin-left:50%;">Total: <%= number_to_currency(total_price(@order.orderContents), :unit => 'P') %></h3>
+                <h3 style="margin-top:60%;margin-left:50%;">Total: <%= number_to_currency(total_price(@order.orderContents), :unit => '₱') %></h3>
                 <button type="button" class="btn btn-danger btn_destroy" style="float:right;">Cancel</button>
                 <button type="button" class="btn btn-primary btn_edit" style="float:right;">Buy Now</button>
                 

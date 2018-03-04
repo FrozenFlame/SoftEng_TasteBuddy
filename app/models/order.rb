@@ -22,13 +22,20 @@ class Order
     self.orderContents.join(', ')
   end
 
-  def self.search(search)
+  def self.search(search) #basically for admin
     if search
       any_of({orderUser: /#{search}/i},{orderNames: /#{search}/i})
     end
   end
 
-  def minusOne(inp)
+  def self.searchFiltered(search, userid)
+    
+    if search
+      where(orderNames:/#{search}/i , orderUser: userid)
+    end
+  end
+
+  def minusOne(inp) #nothing but a test method
     return inp-1
   end
 

@@ -6,13 +6,26 @@ class OrdersController < ApplicationController
   def index
     sleep 1
     # @orders = Order.all
-     if params[:search].blank?
-      # @products = Product.all.paginate(:page => params[:page], :per_page => 10)
-      @orders = Order.all
-    else
-      # @products = Product.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
-      @orders = Order.search(params[:search])
-      
+    if session[:user_id] == nil
+      redirect_to root_url
+    elsif session[:is_admin]
+      if params[:search].blank?
+        # @products = Product.all.paginate(:page => params[:page], :per_page => 10)
+        @orders = Order.all
+      else
+        # @products = Product.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
+        @orders = Order.search(params[:search])
+        
+      end
+    else # filtered for user only
+      if params[:search].blank?
+        # @products = Product.all.paginate(:page => params[:page], :per_page => 10)
+        @orders = Order.where(orderUser: session[:user_id])
+      else
+        # @products = Product.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
+        @orders = Order.searchFiltered(params[:search], session[:user_id])
+        
+      end
     end
   end
 
@@ -95,14 +108,7 @@ class OrdersController < ApplicationController
   end
   helper_method :get_names
 
-   def shorten(str)
-      if str.length > 55
-        return str[0..55] +"..."
-      else
-        return str  
-      end
-    end
-    helper_method :shorten
+   
   
   private
     # Use callbacks to share common setup or constraints between actions.

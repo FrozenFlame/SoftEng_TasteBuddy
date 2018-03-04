@@ -11,6 +11,8 @@ class SessionsController < ApplicationController
       pass = user.read_attribute(:password)
       if  pass == params[:password]
       session[:user_id] = user.read_attribute(:userid)
+      session[:is_admin] = user.read_attribute(:isAdmin)
+      
       puts "[sessions_controller] logged in!"
       redirect_to root_url, notice: "Logged in!"
       else
@@ -30,4 +32,9 @@ class SessionsController < ApplicationController
     reset_session
     redirect_to root_url, notice: "Successfully logged out!"
   end
+
+  def cart
+
+  end
+
 end

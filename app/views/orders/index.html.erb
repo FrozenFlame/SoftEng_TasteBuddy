@@ -33,12 +33,12 @@
             <tr>
               <td><%= order.orderCode %></td> 
               <td><%= order.orderDate %></td> 
-              <td><%= shorten(get_names(order.orderContents)) %></td> 
+              <td><%= shorten(get_names(order.orderContents), 40) %></td> 
               <!-- total order price at this part --> 
-              <%# order.orderContents.each do |item|%>
-                <%# total_price += price[1] %>
-              <%# end %>
-              <% puts "[index.html-orders] " + total_price(order.orderContents).to_s %>
+              <%# order.orderContents.each do |item|%> 
+                <%# total_price += price[1] %> 
+              <%# end %> 
+              <% puts "[index.html-orders] " + total_price(order.orderContents).to_s %> 
               <td><%= number_to_currency(total_price(order.orderContents), :unit =>'P') %> </td> 
               <td>
               <%= link_to 'Show', order, class:'btn'%>

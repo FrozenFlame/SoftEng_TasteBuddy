@@ -18,6 +18,23 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <%= link_to "Home", root_url, class:"nav-link" %>
+            
+          </li>
+          <li class ="nav-item">
+            <% if session[:user_id] != nil %> <!-- this code makes it so it renderrs signup and login if you're not logged in' -->
+              <%= link_to orders_path, class:"nav-link" do %>
+                <%= content_tag(:span, "") %>
+                Orders
+              <% end %>
+            <% end %>
+          </li>
+          <li class ="nav-item">
+            <% if session[:is_admin] %> <!-- this code makes it so it renderrs signup and login if you're not logged in' -->
+              <%= link_to products_path, class:"nav-link" do %>
+                <%= content_tag(:span, "") %>
+                Products
+              <% end %>
+            <% end %>
           </li>
         </ul>
         
@@ -50,9 +67,14 @@
               <%= content_tag(:span, "", :class => "fa fa-sign-in-alt") %>
               Log In
             <% end %>
+            
           <% else %>
+            <%= link_to logout_path, :controller => :sessions_controller, :action => :cart, class:"nav-link" do %>
+              <%= content_tag(:span, "", :class => "fas fa-shopping-cart") %>
+              Cart <!-- add in here -->
+            <% end %>
             <%= link_to logout_path, :controller => :sessions_controller, :action => :logout, class:"nav-link" do %>
-              <%= content_tag(:span, "", :class => "fas fa-user") %>
+              <%= content_tag(:span, "", :class => "fa fa-sign-in-alt") %>
               Log Out
             <% end %>
           <% end %>
@@ -97,7 +119,6 @@
                                 <div class="modal-footer">
                                     <button class="btn btn-primary">LOGIN </button>
                                 </div>
-                                
     
                             </div>
                         </div>
