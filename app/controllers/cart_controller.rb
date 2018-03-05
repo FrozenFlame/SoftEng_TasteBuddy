@@ -33,6 +33,20 @@ class CartController < ApplicationController
 
     end
 
+    def save_cart
+        puts "[cart_controller] params[:qty] is: %d " % params[:qty]
+        puts "[cart_controller] params[:indx] is: %d " % params[:indx]
+        y = params[:indx].to_i - 1
+        qty = params[:qty]
+        @user = User.find_by(userid: session[:user_id])
+        puts "[cart_controller] before: %s " % @user.cart.to_s
+        @user.cart[y][1] = qty.to_i
+        puts "[cart_controller] after: %s " % @user.cart.to_s
+        @user.save
+
+        redirect_back(fallback_location: :back) # returns you to the cart page
+    end
+
     def addToCart_dupe #dupe
         prodcode = params[:prodCode]
         qty = params[:qty].to_i

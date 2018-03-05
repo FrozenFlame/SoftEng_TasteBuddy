@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
 
   get '/cart' => 'cart#show', as: 'cart'
+  post '/cart/save' => 'cart#save_cart', as: 'save_cart'
   post '/cart/checkout' => 'cart#checkout', as: 'checkout'
   post '/orders/:id' => 'order#checkout', as: 'confirm_checkout'
   post '/cart' => 'cart#rmv_cart_atindex', as: 'rmv_cart_atindex'

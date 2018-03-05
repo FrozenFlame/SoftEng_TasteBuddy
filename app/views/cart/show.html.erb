@@ -17,19 +17,28 @@
                             <h4><%= @product.prodName %></h4>
                             <p><%= @product.prodDesc %></p>
                             <p><%= number_to_currency(@product.price, :unit => '₱') %></p><br/>
-                            <b>Qty: <%= text_field_tag(:qty, item[1].to_i, :disabled => true, :name => "qtyfield"+@counter.to_s) %></b>
+                            <!-- ############################################################################################# -->
+                            <%= form_tag save_cart_path, method: :post do %>
+                            <b> <%# text_field_tag (:qty, item[1].to_i, :disabled => true, :name => "qtyfield"+@counter.to_s) %></b>
+                            <%# strtosym = "qtyfield"+@counter.to_s %>
+                            <%# puts strtosym %>
+                            <b>Qty: <%= text_field_tag(:qty,item[1].to_i,disabled:true, data:{tryhardID: @counter})%></b>
                             <div class="btn-group">
                                 <!-- comment out this Save button once the rails ver is here -->
-                                <button type="button" class="btn" style="visibility: hidden" onclick="cloak(this)" name="bSave<%= @counter %>" data-bindex=<%= @counter %>>Save</button>
-                                <%# button_tag "Save"  #currently working on here %>
-                                <button type="button" class="btn" style="visibility: hidden" onclick="cloak(this)" name="bCancel<%= @counter %>" data-bindex=<%= @counter %>>Cancel</button>
+                                <!--<button type="button" class="btn" style="visibility: hidden" onclick="cloak(this)" name="bSave<%= @counter %>" data-bindex=<%= @counter %>>Save</button>-->
+                                <%# button_to "Save", save_cart_path, data:{bindex:@counter.to_s}, params:{indx:@counter-1}, class:"btn", style:"visibility: hidden", onclick:"cloak(this)", name:"bSave"+@counter.to_s %>
+                                <%= hidden_field_tag 'indx', @counter %>
+                                <%= submit_tag "Save", data:{bindex:@counter.to_s, save:1}, params:{indx:@counter-1}, class:"btn", style:"visibility: hidden", onclick:"cloak(this)", name:"bSave"+@counter.to_s %>
+                            <% end %>
+                            <!-- ############################################################################################# -->
+                                <button type="button" class="btn" style="visibility: hidden" onclick="cloak(this)" name="bCancel<%= @counter %>" data-save=0 data-bindex=<%= @counter %> >Cancel</button>
                             </div>
                             <!--:qty, id: :qty, :readonly=>true, value:item[1].to_s-->
                             <!--item[1].to_i -->
                         </div>
                         <div class="col-lg-4 col-md-4">
                            <!--<button type="button" class="btn btn-danger btn_destroy" style="margin-top:50px;float:right;">Remove</button>-->
-                           <%= button_to "Delete", rmv_cart_atindex_path, params:{index: @counter-1}, class:"btn btn-danger btn_destroy", style:"margin-top:50px;float:right;", name:"bDelete" %>
+                           <%= link_to "Delete", rmv_cart_atindex_path, params:{index: @counter-1}, class:"btn btn-danger btn_destroy", style:"margin-top:50px;float:right;", name:"bDelete" %>
                            <!-- edit button will reveal two buttons save and cancel, function name explanatory -->
                            <button type="button" class="btn btn-primary btn_edit" style="margin-top:50px;float:right;" onclick="decloak(this)" name="bEdit" data-bindex=<%= @counter %>>Edit</button>
                            
@@ -87,9 +96,8 @@
         }
         var save_button = document.getElementsByName("bSave"+button.dataset.bindex.toString());
         var cancel_button = document.getElementsByName("bCancel"+button.dataset.bindex.toString());
-        var qtyfield = document.getElementsByName("qtyfield"+button.dataset.bindex.toString());
-        
-        qtyfield[0].disabled = false;
+        var qtyfield = document.getElementsByName("qty");
+        qtyfield[button.dataset.bindex-1].disabled = false;
         save_button[0].style.visibility = "visible";
         cancel_button[0].style.visibility = "visible";
     }
@@ -104,9 +112,8 @@
         }
         var save_button = document.getElementsByName("bSave"+button.dataset.bindex.toString());
         var cancel_button = document.getElementsByName("bCancel"+button.dataset.bindex.toString());
-        var qtyfield = document.getElementsByName("qtyfield"+button.dataset.bindex.toString());
-
-        qtyfield[0].disabled = true;
+        var qtyfield = document.getElementsByName("qty");
+        qtyfield[button.dataset.bindex-1].disabled = button.dataset.save == 1 ? false : true;
         save_button[0].style.visibility = "hidden";
         cancel_button[0].style.visibility = "hidden";
     }
