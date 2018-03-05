@@ -12,6 +12,9 @@ class ProductsController < ApplicationController
     #   @products = Product.find(:all)
       
     # end
+    if !session[:is_admin]
+      redirect_to root_url
+    end
     if params[:search].blank?
       # @products = Product.all.paginate(:page => params[:page], :per_page => 10)
       @products = Product.all
@@ -26,10 +29,16 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+  if !session[:is_admin]
+      redirect_to root_url
+    end
   end
 
   # GET /products/new
   def new
+  if !session[:is_admin]
+      redirect_to root_url
+    end
     puts "[products_controller] New Product"
     
     @product = Product.new
@@ -48,6 +57,9 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+  if !session[:is_admin]
+      redirect_to root_url
+    end
     @genCode = @product.prodCode
   end
 

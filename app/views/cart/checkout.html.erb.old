@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-7 col-sm-7" >
-            <h1>Your Cart</h1>
+            <h1>Checkout items</h1>
             <% @cart.each do |item| %>
                 <% @product = Product.find_by(:prodCode => item[0]) %>
                 <div class="container" style="border: 2px solid #aaa; outline: none; box-sizing: border-box; height:40%; margin-top:10px;">
@@ -57,8 +57,7 @@
             </table>
             <h3 style="margin-top:60%;margin-left:50%;">Total: <%= number_to_currency(total_price(@cart), :unit => '₱') %></h3>
             <button type="button" class="btn btn-danger btn_destroy" style="float:right;">Cancel</button>
-            <!--<button type="button" class="btn btn-new btn_new" style="float:right;">Check Out</button>-->
-            <%= button_to "Check out", checkout_path, data: { confirm: "Are you sure?"}, params:{ :id => "O00001"}, class:"btn btn-new btn_new", style:"float:right;" %>
+            <button type="button" class="btn btn-new btn_new" style="float:right;">Check Out</button>
         </div>
             
         </div>
