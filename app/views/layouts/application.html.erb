@@ -16,6 +16,15 @@
 </head>
 
   <body>
+      <%if notice %>
+          <div id="notice_wrapper" style="position: absolute; top: 0; width: 100%;z-index: 999; background: rgba(135, 216,211,0.85);">
+            <p class="notice" style="padding:2.5rem 0;text-align:center;margin:0;font-size:1.25rem;font-weight:700;color: #FFFFFF;letter-spacing:1px"><%= notice%></p>
+          </div>
+      <% elsif alert %> 
+          <div id="notice_wrapper">
+            <p class="alert"> <%= alert%></p>
+          </div>  
+      <% end %>
              <!-- Login Start-->
                     <div class="modal_container">
                     <div class="modal fade" id="popUpLogin">
