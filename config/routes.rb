@@ -30,7 +30,12 @@ Rails.application.routes.draw do
   #but we need it to be dynamic
   get '/items/:id' => 'main_page#show', as: 'item' # this is where we go when we click an item from the front page
 
+
   get '/cart' => 'cart#show', as: 'cart'
+  post '/cart/save' => 'cart#save_cart', as: 'save_cart'
+  post '/cart/checkout' => 'cart#checkout', as: 'checkout'
+  post '/orders/:id' => 'order#checkout', as: 'confirm_checkout'
+  post '/cart' => 'cart#rmv_cart_atindex', as: 'rmv_cart_atindex'
   put '/cart' => 'cart#addToCart', as: 'add_to_cart'
 
 ###############################################################################################################

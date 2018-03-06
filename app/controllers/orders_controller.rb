@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   
-  # GET /products
-  # GET /products.json
+  # GET /orders
+  # GET /orders.json
   def index
     sleep 1
     # @orders = Order.all
@@ -10,34 +10,36 @@ class OrdersController < ApplicationController
       redirect_to root_url
     elsif session[:is_admin]
       if params[:search].blank?
-        # @products = Product.all.paginate(:page => params[:page], :per_page => 10)
         @orders = Order.all
       else
-        # @products = Product.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
         @orders = Order.search(params[:search])
         
       end
     else # filtered for user only
       if params[:search].blank?
-        # @products = Product.all.paginate(:page => params[:page], :per_page => 10)
         @orders = Order.where(orderUser: session[:user_id])
       else
-        # @products = Product.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
         @orders = Order.searchFiltered(params[:search], session[:user_id])
         
       end
     end
   end
 
-  # GET /products/1
-  # GET /products/1.json
+  # GET /orders/1
+  # GET /orders/1.json
   def show
+    if session[:user_id] == nil
+        redirect_to root_url
+    end
   end
 
-  # GET /products/new
+  # GET /orders/new
   def new
-    # puts "[products_controller] New Product"
-    
+    # puts "[orders_controller] New Order"
+    if session[:user_id] == nil
+      redirect_to root_url
+
+    end
     @order = Order.new
     if Order.last() == nil
       puts "[order_controller] db.order empty, first code generated"
@@ -49,14 +51,18 @@ class OrdersController < ApplicationController
     end
   end
 
-  # GET /products/1/edit
+  # GET /orders/1/edit
   def edit
     # @genCode = @product.prodCode
+    if session[:user_id] == nil
+      redirect_to root_url
+    end
   end
 
-  # POST /products
-  # POST /products.json
+  # POST /orders
+  # POST /orders.json
   def create
+    
     puts "[orders_controller] Create Order"
     @order = Order.new(order_params)
 

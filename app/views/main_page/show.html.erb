@@ -5,7 +5,7 @@
 <div class= "container">
     <div class="cf">
         <div class="leftcol">
-        <%= image_tag("cakes/carrotcake.jpg", size:"300x500") %>
+        <%= image_tag(@product.pathToImg, size:"300x500") %>
         </div>
         <div class="rightcol" style="align-content: center">    
             <h4><i class='category'><%= @product.prodCategory %></i></h4>

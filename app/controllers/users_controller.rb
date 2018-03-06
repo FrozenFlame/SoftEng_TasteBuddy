@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     end
 
     def create
-        nigga = []
         @user = User.new(user_params)
         
         if @user.save # user completes signup
