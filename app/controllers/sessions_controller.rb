@@ -17,12 +17,12 @@ class SessionsController < ApplicationController
       redirect_to root_url, notice: "Logged in!"
       else
         puts "[sessions_controller] failed to log in!"
-        flash.now[:notice] = "Email or password is invalid"
+        flash.now[:alert] = "Email or password is invalid"
         render "new"
       end
       
     else
-      flash.now[:notice] = "Email or password is invalid"
+      flash.now[:alert] = "Email or password is invalid"
       render "new"
     end
 
