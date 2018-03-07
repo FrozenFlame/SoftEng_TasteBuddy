@@ -16,15 +16,27 @@
 </head>
 
   <body>
+            
+      
       <%if notice %>
           <div id="notice_wrapper" style="position: absolute; top: 0; width: 100%;z-index: 999; background: rgba(135, 216,211,0.85);">
-            <p class="notice" style="padding:2.5rem 0;text-align:center;margin:0;font-size:1.25rem;font-weight:700;color: #FFFFFF;letter-spacing:1px"><%= notice%></p>
+            <p class="notice" style="padding:1.75rem 0;text-align:center;margin:0;font-size:1.25rem;font-weight:700;color: #FFFFFF;letter-spacing:1px"><%= notice%></p>
           </div>
       <% elsif alert %> 
-          <div id="notice_wrapper">
-            <p class="alert"> <%= alert%></p>
+          <div id="notice_wrapper" style="position: absolute; top: 0; width: 100%;z-index: 999; background: rgba(135, 216,211,0.85);">
+            <p class="alert" style="padding:1.75rem 0;text-align:center;margin:0;font-size:1.25rem;font-weight:700;color: #FFFFFF;letter-spacing:1px"> <%= alert%></p>
           </div>  
       <% end %>
+      
+      <script>
+        $(document).ready(function(){
+            setTimeout(function(){
+              $('#notice_wrapper').fadeOut("slow",function(){
+                $(this).remove();
+              })   
+            }, 4500);
+        });
+      </script>
              <!-- Login Start-->
                     <div class="modal_container">
                     <div class="modal fade" id="popUpLogin">
@@ -129,7 +141,7 @@
       
       
       
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <%= link_to "TasteBuddy", root_url, class:"navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -206,5 +218,6 @@
     </nav>
     <br/>
       <%= yield %>
+    
   </body>
 </html>
