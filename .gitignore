@@ -17,3 +17,8 @@
 /yarn-error.log
 
 .byebug_history
+
+.DS_Store
+.DS_Store?
+.keep
+Thumbs.db
