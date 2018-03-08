@@ -67,11 +67,21 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     puts "[products_controller] Create Product"
+    image_file = params[:qqfile].is_a?(ActionDispatch::Http::UploadedFile) ? params[:qqfile] : params[:file]
     @product = Product.new(product_params)
-
+    @product.image = image_file
+    @category = @product.prodCategory
+    # @filename = @img_object.original_filename
+    # @product.pathToImg = @category.to_s + "/" + @filename
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        # file_name_filesystem = @product.prodCode.to_s + @filename
+        # img_path_on_filesystem = Rails.root.join('app','assets','images', 'food')
+        # File.open(img_path_on_filesystem, 'wb' |file|)
+          # file.write(@photo_object.read)
+        # end
+
+        format.html { redirect_to @product, notice: 'Product was successfully created.'}
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }

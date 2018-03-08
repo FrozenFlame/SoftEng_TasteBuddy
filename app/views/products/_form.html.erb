@@ -44,8 +44,39 @@
     <%= form.label 'Price' %>
     <%= form.text_field :price, id: :product_price, class:'form-control' %>
   </div>
-
+  <div class="field">
+    <%= form.file_field :img %>
+  </div>
+  
   <div class="actions">
     <%= form.submit 'Accept', class:'btn btn_new'%>
   </div>
+
+
 <% end %>
+ 
+<script>
+  $(document).ready(function(){
+
+    var uploader = new qq.FileUploader({
+      debug: true,
+      allowedExtensions: ['jpg', 'jpeg', 'png', 'gif'],
+      sizeLimit: 10485760, // max size: 10MB
+      minSizeLimit: 0, // min size
+      multiple: true,
+      element: document.getElementById('file-uploader'),
+      action: '<%= images_path %>',
+      onComplete: function(id, fileName, responseJSON){
+        $.getScript("<%= screenshots_path %>");
+      },
+      onSubmit: function(id, fileName) {
+        uploader.setParams({
+          xx: "xx",
+          yy: 'yy',
+          zz: 'zz',       
+          authenticity_token: "<%= form_authenticity_token.to_s %>"
+        });
+      }
+    });
+});
+</script>

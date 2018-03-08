@@ -37,6 +37,9 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'carrierwave'
+gem 'carrierwave-mongoid'
+gem 'mini_magick'
+gem 'rack-raw-upload'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
