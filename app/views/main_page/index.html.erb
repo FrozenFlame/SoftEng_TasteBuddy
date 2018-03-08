@@ -63,7 +63,7 @@
                 <b style="color: #555555; text-decoration: none;"> <%= product.prodName %></b>
                 <br/>
                 <!--<img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">-->
-                <%= image_tag(product.pathToImg, :class =>"img-fluid img-thumbnail")%>
+                <%= image_tag(product.image_url.to_s, :class =>"img-fluid img-thumbnail")%>
                 <br/>
                 <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc, 50) %></text>
                 <br/>
@@ -93,7 +93,7 @@
                 <b style="color: #555555; text-decoration: none;"> <%= product.prodName %></b>
                 <br/>
                 <!--<img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">-->
-                <%= image_tag(product.pathToImg, :class =>"img-fluid img-thumbnail")%>
+                <%= image_tag(product.image_url.to_s, :class =>"img-fluid img-thumbnail")%>
                 <br/>
                 <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc, 50) %></text>
                 <br/>
@@ -123,7 +123,7 @@
                 <b style="color: #555555; text-decoration: none;"> <%= product.prodName %></b>
                 <br/>
                 <!--<img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">-->
-                <%= image_tag(product.pathToImg, :class =>"img-fluid img-thumbnail")%>
+                <%= image_tag(product.image_url.to_s, :class =>"img-fluid img-thumbnail")%>
                 <br/>
                 <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc, 50) %></text>
                 <br/>
@@ -153,7 +153,7 @@
                 <b style="color: #555555; text-decoration: none;"> <%= product.prodName %></b>
                 <br/>
                 <!--<img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">-->
-                <%= image_tag(product.pathToImg, :class =>"img-fluid img-thumbnail")%>
+                <%= image_tag(product.image_url.to_s, :class =>"img-fluid img-thumbnail")%>
                 <br/>
                 <text style="color: #888888; text-decoration: none;"><%= shorten(product.prodDesc, 50) %></text>
                 <br/>

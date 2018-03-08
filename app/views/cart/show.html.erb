@@ -10,7 +10,7 @@
                 <div class="container" style="border: 2px solid #aaa; outline: none; box-sizing: border-box; height:40%; margin-top:10px;">
                     <div class="row">
                         <div class="col-lg-4 col-md-4" style="height:140px;width:100%;">
-                            <%= image_tag(@product.pathToImg, size:"200x140") %>
+                            <%= image_tag(product.image_url.to_s) %>
                         </div>
                         <div class="col-lg-4 col-md-4"> <!-- stylize this more -->
                             <i><%= @product.prodCategory %></i>
