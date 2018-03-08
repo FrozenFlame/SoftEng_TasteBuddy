@@ -36,6 +36,7 @@ gem 'kaminari-actionview'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'carrierwave'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
