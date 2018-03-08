@@ -1,4 +1,4 @@
-<%= form_with(model: product, local: true) do |form| %>
+<%= form_for(@product, :html => { :multipart => true }, :remote => true) do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
       <div class="alert alert-danger">
@@ -45,7 +45,7 @@
     <%= form.text_field :price, id: :product_price, class:'form-control' %>
   </div>
   <div class="field">
-    <%= form.file_field :img %>
+    <%= form.file_field :image %>
   </div>
   
   <div class="actions">

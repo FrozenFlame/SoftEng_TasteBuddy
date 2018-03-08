@@ -11,7 +11,7 @@ class Product
   field :deleted, type: Boolean, default: false
   # field :pathToImg, type: String, default: 'food/no-img.png'
   # field :_id, type: String, default: -> { prodCode.to_s.parameterize } # this makes it so the link above would be reflected here BUT only if they have been newly created, this breaks old links
-  field :image 
+  field :image
   mount_uploader :image, ImgUploader
 
   def isDeleted?
