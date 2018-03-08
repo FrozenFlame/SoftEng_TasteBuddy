@@ -10,6 +10,7 @@ class Product
   field :price, type: BigDecimal
   field :deleted, type: Boolean, default: false
   field :pathToImg, type: String, default: 'food/no-img.png'
+  field :image  # this is for user submitted images.
   # field :_id, type: String, default: -> { prodCode.to_s.parameterize } # this makes it so the link above would be reflected here BUT only if they have been newly created, this breaks old links
 
   def isDeleted?

@@ -44,6 +44,10 @@
     <%= form.label 'Price' %>
     <%= form.text_field :price, id: :product_price, class:'form-control' %>
   </div>
+  <div class='field'>
+    <%= form.label 'Image' %>
+    <%= form.file_field :image, id: :product_image, class:'form-control' %>
+  </div>
 
   <div class="actions">
     <%= form.submit 'Accept', class:'btn btn_new'%>
