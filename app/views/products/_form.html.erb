@@ -45,7 +45,7 @@
     <%= form.text_field :price, id: :product_price, class:'form-control' %>
   </div>
   <div class="field">
-    <%= form.file_field :image %>
+    <%= form.file_field :image, accept: 'image/png,image/jpeg'%>
   </div>
   
   <div class="actions">
