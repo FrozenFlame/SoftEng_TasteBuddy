@@ -111,10 +111,9 @@ class CartController < ApplicationController
             @order = Order.new(:orderCode => genCode, :orderDate => date, :orderDateStr => date.to_s, :orderUser => @user.userid, :orderNames => get_names(newOrderContent), :orderContents => newOrderContent)
             @order.save
 
-
-            redirect_to confirm_checkout_path(id:@order._id)
+            redirect_to confirm_checkout_path(id:@order._id), notice: 'Transaction Authorized. Thank you!'
         elsif
-            redirect_to root_url
+            redirect_to root_url 
         end
     end
 
