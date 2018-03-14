@@ -1,28 +1,28 @@
-db.products.insert({prodCode:"00026", prodCategory:"Bread", prodName:"American Sandwich Bread", prodDesc:"Fluffy Bread", price: 4.99,pathToImg:"bread/AmericanBread.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00026", prodCategory:"Bread", prodName:"American Sandwich Bread", prodDesc:"Fluffy Bread", price: 149.99,pathToImg:"bread/AmericanBread.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
-db.products.insert({prodCode:"00028", prodCategory:"Bread", prodName:"Apricot Cream Cheese Babka", prodDesc:"The bread turned out just as fabulous as I hoped it would, perhaps even better", price: 4.99,pathToImg:"bread/apricot.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00028", prodCategory:"Bread", prodName:"Apricot Cream Cheese Babka", prodDesc:"The bread turned out just as fabulous as I hoped it would, perhaps even better", price: 159.99,pathToImg:"bread/apricot.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
-db.products.insert({prodCode:"00029", prodCategory:"Bread", prodName:"Bacon And Cheese Easter Bread", prodDesc:"traditional Italian Easter Bread recipe", price: 6.99,pathToImg:"bread/baconEasterBread.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00029", prodCategory:"Bread", prodName:"Bacon And Cheese Easter Bread", prodDesc:"traditional Italian Easter Bread recipe", price: 149.99,pathToImg:"bread/baconEasterBread.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
-db.products.insert({prodCode:"00030", prodCategory:"Bread", prodName:"Ciabatta Bread", prodDesc:"ciabatta bread for its chewy exterior and soft crumb speckled with air holes. It’s the perfect bread for dunking into soup, slicing horizontally and making a sandwich, or for simply slathering with butter and eating until your heart’s content", price: 6.99,pathToImg:"bread/ciabattaBread.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
-
-
-db.products.insert({prodCode:"00031", prodCategory:"Bread", prodName:"Chocolate Babka", prodDesc:"Rich, rich, rich is the best way to describe this out-of-this-world, decadent bread", price: 9.99,pathToImg:"bread/chocolatebabka.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
-
-db.products.insert({prodCode:"00032", prodCategory:"Bread", prodName:"Cinnamon babka", prodDesc:"A twisted bread with a brown sugar-cinnamon filling.", price: 7.99,pathToImg:"bread/cinammonbabka.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
-
-db.products.insert({prodCode:"00033", prodCategory:"Bread", prodName:"Apple Cinnamon Sugar Pull Apart Bread", prodDesc:"This apple cinnamon sugar pull apart bread is made completely from scratch and tastes like apple pie", price: 7.99,pathToImg:"bread/applecinnamon.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00030", prodCategory:"Bread", prodName:"Ciabatta Bread", prodDesc:"ciabatta bread for its chewy exterior and soft crumb speckled with air holes. It’s the perfect bread for dunking into soup, slicing horizontally and making a sandwich, or for simply slathering with butter and eating until your heart’s content", price: 149.99,pathToImg:"bread/ciabattaBread.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
 
-db.products.insert({prodCode:"00034", prodCategory:"Bread", prodName:"Monkey Bread", prodDesc:"The butter and brown sugar create a caramel sauce that coats the bread once it is turned out of the pan", price: 9.99,pathToImg:"bread/monkeyBread.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00031", prodCategory:"Bread", prodName:"Chocolate Babka", prodDesc:"Rich, rich, rich is the best way to describe this out-of-this-world, decadent bread", price: 149.99,pathToImg:"bread/chocolatebabka.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
-db.products.insert({prodCode:"00035", prodCategory:"Bread", prodName:"Panettone", prodDesc:"panettone is a sweet bread loaded with candied citron, lemon zest and raisins, and baked in a cylindrical mold, which gives it a distinctive look", price: 8.99,pathToImg:"bread/panetotte.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00032", prodCategory:"Bread", prodName:"Cinnamon babka", prodDesc:"A twisted bread with a brown sugar-cinnamon filling.", price: 199.99,pathToImg:"bread/cinammonbabka.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
-db.products.insert({prodCode:"00036", prodCategory:"Bread", prodName:"Pull-apart bacon bread", prodDesc:"It's the perfect treat to bake for an informal get-together", price: 8.99,pathToImg:"bread/pullapartBacon.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00033", prodCategory:"Bread", prodName:"Apple Cinnamon Sugar Pull Apart Bread", prodDesc:"This apple cinnamon sugar pull apart bread is made completely from scratch and tastes like apple pie", price: 149.99,pathToImg:"bread/applecinnamon.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
-db.products.insert({prodCode:"00037", prodCategory:"Bread", prodName:"Savory Party Bread", prodDesc:"The sliced loaf fans out for a fun presentation", price: 7.99,pathToImg:"bread/savoryparty.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
-db.products.insert({prodCode:"00038", prodCategory:"Bread", prodName:"Garlic-Cheese Crescent Rolls", prodDesc:"The garlic and Parmesan flavors really come through", price: 6.99,pathToImg:"bread/garliccheeseRoll.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00034", prodCategory:"Bread", prodName:"Monkey Bread", prodDesc:"The butter and brown sugar create a caramel sauce that coats the bread once it is turned out of the pan", price: 199.99,pathToImg:"bread/monkeyBread.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
-db.products.insert({prodCode:"00039", prodCategory:"Bread", prodName:"Rustic Cranberry & orange Bread", prodDesc:"slices of pretty bread make the perfect holiday brunch treat", price: 6.99,pathToImg:"bread/rusticcanberry.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00035", prodCategory:"Bread", prodName:"Panettone", prodDesc:"panettone is a sweet bread loaded with candied citron, lemon zest and raisins, and baked in a cylindrical mold, which gives it a distinctive look", price: 179.99,pathToImg:"bread/panetotte.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00036", prodCategory:"Bread", prodName:"Pull-apart bacon bread", prodDesc:"It's the perfect treat to bake for an informal get-together", price: 179.99,pathToImg:"bread/pullapartBacon.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00037", prodCategory:"Bread", prodName:"Savory Party Bread", prodDesc:"The sliced loaf fans out for a fun presentation", price: 199.99,pathToImg:"bread/savoryparty.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00038", prodCategory:"Bread", prodName:"Garlic-Cheese Crescent Rolls", prodDesc:"The garlic and Parmesan flavors really come through", price: 200.00,pathToImg:"bread/garliccheeseRoll.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00039", prodCategory:"Bread", prodName:"Rustic Cranberry & orange Bread", prodDesc:"slices of pretty bread make the perfect holiday brunch treat", price: 169.99,pathToImg:"bread/rusticcanberry.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
