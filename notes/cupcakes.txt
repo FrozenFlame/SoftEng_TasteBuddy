@@ -1,0 +1,23 @@
+Cupcakes
+
+db.products.insert({prodCode:"00048", prodCategory:"Cupcakes", prodName:"Coconut Cupcakes With toasted Coconut Frosting", prodDesc:"Light and fluffy coconut cupcakes with a coconut buttercream frosting, covered in toasted coconut", price: 10.99,pathToImg:"cupcakes/coconutcupcakes.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+
+db.products.insert({prodCode:"00049", prodCategory:"Cupcakes", prodName:"Dark Chocolate Cupcakes with Peanut Butter Frosting", prodDesc:"These dark chocolate cupcakes are loaded with rich chocolate flavor, and topped with a light and creamy peanut butter frosting", price: 9.99,pathToImg:"cupcakes/darkchocolateCupcake.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00050", prodCategory:"Cupcakes", prodName:"Irish Cream Cupcakes", prodDesc:"Guinness cupcakes with a Jameson whiskey ganache center and topped with a Baileys Irish Cream frosting", price: 8.99,pathToImg:"cupcakes/irishCream.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+
+db.products.insert({prodCode:"00051", prodCategory:"Cupcakes", prodName:"Funfetti Cupcakes", prodDesc:" buttery vanilla cupcakes loaded with sprinkles and topped with vanilla buttercream frosting", price: 5.99,pathToImg:"cupcakes/funfetti.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00052", prodCategory:"Cupcakes", prodName:"Margarita Cupcakes", prodDesc:"Both the lime-vanilla cupcakes and frosting are spiked with tequila", price: 7.99,pathToImg:"cupcakes/margarita.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00053", prodCategory:"Cupcakes", prodName:"Mocha Cupcakes With Espresso Buttercream frostig", prodDesc:"These mocha cupcakes are coffee and espresso-infused, with a subtle chocolate flavor, and topped with an espresso-spiked buttercream frosting", price: 8.99,pathToImg:"cupcakes/mochacupcake.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00054", prodCategory:"Cupcakes", prodName:"Pumpkin Cupcakes With Cream Cheese Frosting",prodDesc:"Slightly-spiced pumpkin cupcakes piled high with cream cheese frosting", price: 8.99,pathToImg:"cupcakes/pumpkin.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00055", prodCategory:"Cupcakes", prodName:"Pumpkin Spice Latte Cupcakes",prodDesc:"riff on the popular Starbucks drink.. coffee-infused pumpkin cupcakes brushed with coffee and topped with whipped cream frosting", price: 8.99,pathToImg:"cupcakes/pumpkinlatte.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00056", prodCategory:"Cupcakes", prodName:"Red Velvet Cupcakes With Cream Cheese Frosting",prodDesc:"These are the absolute BEST red velvet cupcakes! A gorgeous red color, moist and fluffy, and topped with a luscious cream cheese frosting", price: 8.99,pathToImg:"cupcakes/redvelvet.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00057", prodCategory:"Cupcakes", prodName:"Ultimate Chocolate Cupcakes",prodDesc:"a moist chocolate cupcake recipe made from scratch with a chocolate ganache center and dreamy chocolate frosting", price: 9.99,pathToImg:"cupcakes/chococupcake.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})

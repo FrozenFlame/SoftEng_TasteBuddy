@@ -1,0 +1,24 @@
+brownies
+
+
+db.products.insert({prodCode:"00040", prodCategory:"Brownies", prodName:"Baked Brownie", prodDesc:"The Baked Brownie! Totally famous and for good reason – they are rich, dense, fudge-like brownies", price: 9.99,pathToImg:"brownies/bakedBrownies.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00041", prodCategory:"Brownies", prodName:"Buckeye Brownie", prodDesc:"These brownies will make any of you peanut butter and chocolate lovers absolutely ecstatic", price: 4.99,pathToImg:"brownies/bakeEyeBrownies.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00042", prodCategory:"Brownies", prodName:"Chocolate Frosted Brownie", prodDesc:"
+These frosted brownies start with fudge brownies and are topped with a luscious chocolate buttercream frosting", price: 4.99,pathToImg:"brownies/chocolatefrosted.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00043", prodCategory:"Brownies", prodName:"Cream Cheese Brownie", prodDesc:"brownies with swirls of cheesecak", price: 6.99,pathToImg:"brownies/creamcheese.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00044", prodCategory:"Brownies", prodName:"Frozen Brownie Sundae", prodDesc:"Delicious Brownie", price: 4.99,pathToImg:"brownies/icecreamBrownie.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+
+db.products.insert({prodCode:"00045", prodCategory:"Brownies", prodName:"Peanut Butter Cup Crunch Brownie bars", prodDesc:"layer of brownies, then ooey gooey marshmallows, and then topped with a combination of melted chocolate, peanut butter and Rice Krispies", price: 7.99,pathToImg:"brownies/peanutbutter.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+db.products.insert({prodCode:"00046", prodCategory:"Brownies", prodName:"Ina's Outrageous brownie", prodDesc:"these brownies are the brainchild of Ina Garten – huge, wonderfully rich and complete with tons of chopped walnuts", price: 6.99,pathToImg:"brownies/outrageous.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+
+db.products.insert({prodCode:"00047", prodCategory:"Brownies", prodName:"Sweet and Salty brownie", prodDesc:"The batter from the super popular Baked brownie is used, with a layer homemade salted caramel baked right into the middle", price: 4.99,pathToImg:"brownies/sweetnsalty.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+
+
+
