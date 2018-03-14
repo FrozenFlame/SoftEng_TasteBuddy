@@ -28,8 +28,9 @@ Rails.application.routes.draw do
   # get('/details', {:controller => 'main_page', :action => 'show'}) # this is the non-railsified way
   
   #but we need it to be dynamic
+  get '/mainpage/search' => 'main_page#index', as: 'main_search'
   get '/items/:id' => 'main_page#show', as: 'item' # this is where we go when we click an item from the front page
-
+  
 
   get '/cart' => 'cart#show', as: 'cart'
   post '/cart/save' => 'cart#save_cart', as: 'save_cart'

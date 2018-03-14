@@ -199,6 +199,7 @@
               <% end %>
             <% end %>
           </li>
+          
         </ul>
         
         <!-- navbar right side --> 
@@ -217,7 +218,25 @@
               </form>
               </div>
           </li> -->
-          
+          <li>
+              <div class="col-lg-12">
+             
+                <%= form_tag main_search_path,:class => "navbar-form", :role => "search", :method => 'get' do %>
+                  <div class="input-group">
+                    <!--<button type="button" id="SearchButton" class="btn">Search</button>
+                  <input type="text" id="search" name="search" class="SearchBar" placeholder="Search">-->
+                  <%= text_field_tag :search, params[:search], placeholder:'Search...', class:"form-control" %>
+                  <!--<%= button_tag "Search", name: nil, class:'btn' %>-->
+                  <div class="actions">
+                    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+                      <i class="fas fa-search"></i> Search
+                      <% end %>
+                    </div>
+                  </div>
+                  
+                <% end %>
+              </div>
+          </li>
           <!--<li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#popUpSignUp" data-whatever="@mdo"><span class="fas fa-user"></span>Sign Up</a></li>
           <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#popUpLogin" data-whatever="@mdo"><span class="fa fa-sign-in-alt"></span>Login</a></li>-->
           

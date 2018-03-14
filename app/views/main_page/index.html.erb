@@ -1,16 +1,16 @@
 <!-- everyone can see this page -->
 <div id="header" class="header" >
-    <div class="container">
+    <div class="logo">
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <br>
                 <br>
-                <%= image_tag("Sliders/SliderImage1",size:"1080x600") %>              
+                <%= image_tag("Sliders/SliderImage1",size:"720x400") %>              
             </div>
         </div>
     </div>
 </div>
-<div id="thumbnail" class="thumbnail" style="margin-top:2%;">
+<!--<div id="thumbnail" class="thumbnail" style="margin-top:2%;">
     <div class="container-fluid">
         <h2>Special Offers</h2>
           <div class="row text-center text-lg-left">
@@ -47,12 +47,14 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 <div id="thumbnail" class="thumbnail" style="margin-top:2%;">
   <div class="container-fluid">
     <!-- flesh this out more some time, integrate search function -->
+      <% if @cakes_flag %>
       <h2>Cakes</h2>
+      <% end %>
       <div class="row text-center text-lg-left">
       <% @products.each do |product| %>
         <% if not product.isDeleted? %>
@@ -82,7 +84,9 @@
 
 <div id="thumbnail" class="thumbnail" style="margin-top:2%;">
   <div class="container-fluid">
+    <% if @cupcakes_flag %>
       <h2>Cupcakes</h2>
+    <% end %>
       <div class="row text-center text-lg-left">
       <% @products.each do |product| %>
         <% if not product.isDeleted? %>
@@ -112,7 +116,9 @@
 
 <div id="thumbnail" class="thumbnail" style="margin-top:2%;">
   <div class="container-fluid">
+    <% if @cookies_flag %>
       <h2>Cookies</h2>
+    <% end %>
       <div class="row text-center text-lg-left">
       <% @products.each do |product| %>
         <% if not product.isDeleted? %>
@@ -142,7 +148,9 @@
 
 <div id="thumbnail" class="thumbnail" style="margin-top:2%;">
     <div class="container-fluid">
+      <% if @bread_flag %>
         <h2>Bread</h2>
+      <% end %>
         <div class="row text-center text-lg-left">
         <% @products.each do |product| %>
           <% if not product.isDeleted? %>
@@ -171,7 +179,9 @@
 </div>
 <div id="thumbnail" class="thumbnail" style="margin-top:2%;">
     <div class="container-fluid">
+      <% if @brownies_flag %>
         <h2>Brownies</h2>
+      <% end %>
         <div class="row text-center text-lg-left">
         <% @products.each do |product| %>
           <% if not product.isDeleted? %>
