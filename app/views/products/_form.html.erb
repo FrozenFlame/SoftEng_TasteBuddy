@@ -26,7 +26,7 @@
     <%# form.text_field :prodCategory, id: :product_prodCategory, class:'form-control' %>
     <!-- this one is a drop down -->
     <div class="dropdown">
-      <%= form.select :prodCategory, ['Bread','Cakes','Cookies','Cupcakes'], class:'form-control' %>
+      <%= form.select :prodCategory, ['Bread','Brownies','Cakes','Cookies','Cupcakes'], class:'form-control' %>
     </div>
   </div>
 
@@ -43,6 +43,10 @@
   <div class="field">
     <%= form.label 'Price' %>
     <%= form.text_field :price, id: :product_price, class:'form-control' %>
+  </div>
+  <div class='field'>
+    <%= form.label 'Image' %>
+    <%= form.file_field :image, id: :product_image, class:'form-control' %>
   </div>
 
   <div class="actions">

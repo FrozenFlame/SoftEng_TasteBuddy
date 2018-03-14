@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
   # GET /products
   # GET /products.json
   def index
@@ -47,11 +46,10 @@ class ProductsController < ApplicationController
       @genCode = '00001'
     else
       @prevProd = Product.last().prodCode.to_i
-      puts "WARNING WARNING "
+      puts "[products_controller] WARNING WARNING"
       puts @prevProd.to_s
       @prevProd = @prevProd +1
       @genCode = @prevProd.to_s.rjust(5, "0")
-    
     end
   end
 
@@ -68,6 +66,19 @@ class ProductsController < ApplicationController
   def create
     puts "[products_controller] Create Product"
     @product = Product.new(product_params)
+    uploaded_io = params[:product][:image]
+    # if uploaded_io != nil
+    #   @product.pathToImg = @product.prodCategory + '/' + @product.prodCode
+    # end
+    # uploaded_io.rename(uploaded_io.original_filename, @product.prodCode.to_s)
+    if uploaded_io != nil
+      File.open(Rails.root.join('app','assets', 'images', @product.prodCategory.to_s.downcase, uploaded_io.original_filename), 'wb') do |file|
+        # puts "[products_controller] original file name " +uploaded_io.original_filename.to_s
+        # file.rename(uploaded_io.original_filename, @product.prodCode.to_s)
+        file.write(uploaded_io.read)
+      end
+      @product.pathToImg = @product.prodCategory.downcase + '/' + uploaded_io.original_filename
+    end
 
     respond_to do |format|
       if @product.save
@@ -83,6 +94,20 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    uploaded_io = params[:product][:image]
+    # if uploaded_io != nil
+    #   @product.pathToImg = @product.prodCategory + '/' + @product.prodCode
+    # end
+    # uploaded_io.rename(uploaded_io.original_filename, @product.prodCode.to_s)
+    if uploaded_io != nil
+      File.open(Rails.root.join('app','assets', 'images', @product.prodCategory.to_s.downcase, uploaded_io.original_filename), 'wb') do |file|
+        # puts "[products_controller] original file name " +uploaded_io.original_filename.to_s
+        # file.rename(uploaded_io.original_filename, @product.prodCode.to_s)
+        file.write(uploaded_io.read)
+      end
+      @product.pathToImg = @product.prodCategory.downcase + '/' + uploaded_io.original_filename
+    end
+    
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
