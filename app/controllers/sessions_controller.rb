@@ -18,12 +18,12 @@ class SessionsController < ApplicationController
       else
         puts "[sessions_controller] failed to log in!"
         flash.now[:notice] = "Email or password is invalid"
-        render "new"
+        # render "new"
       end
       
     else
       flash.now[:notice] = "Email or password is invalid"
-      render "new"
+      # render "new"
     end
 
   end
