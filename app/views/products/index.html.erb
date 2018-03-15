@@ -35,7 +35,7 @@
               <td><%= product.prodCode %> </td> 
               <td><%= product.prodCategory %> </td> 
               <td><%= product.prodName %> </td> 
-              <td><%= shorten(product.prodDesc,50) %> </td> <!-- there must be a better way to truncate this --> 
+              <td><%= shorten(product.prodDesc,35) %> </td> <!-- there must be a better way to truncate this --> 
               <td><%= number_to_currency(product.price, :unit =>'₱') %> </td> 
               <td>
               <%= link_to 'Show', product, class:'btn'%>
