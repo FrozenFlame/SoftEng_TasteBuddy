@@ -4,7 +4,7 @@ db.products.insert({prodCode:"00028", prodCategory:"Bread", prodName:"Apricot Cr
 
 db.products.insert({prodCode:"00029", prodCategory:"Bread", prodName:"Bacon And Cheese Easter Bread", prodDesc:"traditional Italian Easter Bread recipe", price: 149.99,pathToImg:"bread/baconEasterBread.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
-db.products.insert({prodCode:"00030", prodCategory:"Bread", prodName:"Ciabatta Bread", prodDesc:"ciabatta bread for its chewy exterior and soft crumb speckled with air holes. It’s the perfect bread for dunking into soup, slicing horizontally and making a sandwich, or for simply slathering with butter and eating until your heart’s content", price: 149.99,pathToImg:"bread/ciabattaBread.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
+db.products.insert({prodCode:"00030", prodCategory:"Bread", prodName:"Ciabatta Bread", prodDesc:"ciabatta bread for its chewy exterior and soft crumb speckled with air holes. It's the perfect bread for dunking into soup, slicing horizontally and making a sandwich, or for simply slathering with butter and eating until your heart's content", price: 149.99,pathToImg:"bread/ciabattaBread.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
 
 
 db.products.insert({prodCode:"00031", prodCategory:"Bread", prodName:"Chocolate Babka", prodDesc:"Rich, rich, rich is the best way to describe this out-of-this-world, decadent bread", price: 149.99,pathToImg:"bread/chocolatebabka.jpg", deleted: false, updated_at: new Date(), created_at:new Date()})
