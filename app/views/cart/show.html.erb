@@ -38,6 +38,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4">
                            <!--<button type="button" class="btn btn-danger btn_destroy" style="margin-top:50px;float:right;">Remove</button>-->
+                           <% puts @counter.to_s + "HAHAHA" %>
                            <%= link_to "Delete", rmv_cart_atindex_path, params:{index: @counter-1}, class:"btn btn-danger btn_destroy", style:"margin-top:50px;float:right;", name:"bDelete" %>
                            <!-- edit button will reveal two buttons save and cancel, function name explanatory -->
                            <button type="button" class="btn btn-primary btn_edit" style="margin-top:50px;float:right;" onclick="decloak(this)" name="bEdit" data-bindex=<%= @counter %>>Edit</button>
